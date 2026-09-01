@@ -22,7 +22,7 @@ export function Footer() {
       <div className="mx-auto w-full max-w-6xl">
         <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr_1fr]">
           <div>
-            <Logo tone="inverted" />
+            <Logo variant="stacked" tone="inverted" className="h-20 sm:h-24" />
             <p className="eyebrow mt-5 text-gold-soft">{brand.tagline}</p>
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-ivory/70">
               Strategic digital marketing for ambitious businesses that know where they want to go —

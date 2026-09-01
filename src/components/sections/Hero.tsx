@@ -24,7 +24,7 @@ function GrowthVisual() {
         <path d="M145 55 L160 40" stroke="var(--color-navy)" strokeWidth="1.5" />
       </svg>
       <div className="float-slow absolute inset-0 flex items-center justify-center">
-        <LogoMark className="h-20 w-20 text-navy/80 sm:h-24 sm:w-24" />
+        <LogoMark className="h-20 w-auto sm:h-24" />
       </div>
     </div>
   );

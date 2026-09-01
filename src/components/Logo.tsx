@@ -1,55 +1,73 @@
 import { cn } from "@/lib/utils";
+import horizontalAsset from "@/assets/logo-horizontal.png.asset.json";
+import stackedNavyAsset from "@/assets/logo-stacked-navy.png.asset.json";
+import stackedLightAsset from "@/assets/logo-stacked-light.png.asset.json";
+import iconNavyAsset from "@/assets/logo-icon-navy.png.asset.json";
+import iconLightAsset from "@/assets/logo-icon-light.png.asset.json";
 
 /**
- * GROVISION logo.
- *
- * NOTE: no official logo asset files were supplied. This component renders a
- * neutral placeholder mark + wordmark. To use the official assets, drop them in
- * `src/assets/` and replace ONLY the markup inside `LogoMark`/`Logo` with the
- * imported images — do not alter the supplied artwork.
+ * GROVISION logo — official supplied brand artwork.
+ * Artwork is used exactly as provided; only scale changes.
  */
 
-export function LogoMark({ className }: { className?: string }) {
+export function LogoMark({
+  className,
+  tone = "default",
+}: {
+  className?: string;
+  tone?: "default" | "inverted";
+}) {
+  const src = tone === "inverted" ? iconLightAsset.url : iconNavyAsset.url;
   return (
-    <svg
-      viewBox="0 0 48 48"
-      role="img"
-      aria-label="GROVISION icon"
-      className={cn("h-8 w-8", className)}
-    >
-      <circle cx="24" cy="24" r="22" fill="none" stroke="currentColor" strokeWidth="1.5" />
-      <path
-        d="M14 32 L21 24 L27 28 L36 15"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2.5"
-        strokeLinecap="square"
-      />
-      <circle cx="24" cy="24" r="4.5" fill="none" stroke="currentColor" strokeWidth="1.5" />
-    </svg>
+    <img
+      src={src}
+      alt=""
+      aria-hidden="true"
+      loading="lazy"
+      decoding="async"
+      className={cn("h-8 w-auto object-contain", className)}
+    />
   );
 }
 
 type LogoProps = {
-  /** "full" shows the wordmark, "icon" is for compact/mobile contexts. */
-  variant?: "full" | "icon";
+  /** "full" = horizontal lockup, "stacked" = vertical lockup, "icon" = mark only. */
+  variant?: "full" | "stacked" | "icon";
   /** Use "inverted" on navy/dark backgrounds. */
   tone?: "default" | "inverted";
   className?: string;
 };
 
 export function Logo({ variant = "full", tone = "default", className }: LogoProps) {
-  const toneClass = tone === "inverted" ? "text-ivory" : "text-navy";
+  if (variant === "icon") {
+    return (
+      <span className={cn("inline-flex items-center", className)}>
+        <LogoMark tone={tone} className="h-9 w-auto" />
+        <span className="sr-only">GROVISION</span>
+      </span>
+    );
+  }
+
+  const src =
+    variant === "stacked"
+      ? tone === "inverted"
+        ? stackedLightAsset.url
+        : stackedNavyAsset.url
+      : tone === "inverted"
+        ? stackedLightAsset.url
+        : horizontalAsset.url;
 
   return (
-    <span className={cn("inline-flex items-center gap-2.5", toneClass, className)}>
-      <LogoMark className={cn("h-8 w-8 shrink-0", tone === "default" && "text-gold")} />
-      {variant === "full" && (
-        <span className="text-base font-bold leading-none tracking-[0.2em] sm:text-lg">
-          GROVISION
-        </span>
+    <img
+      src={src}
+      alt="GROVISION — where vision meets growth"
+      width={variant === "stacked" ? 700 : 900}
+      height={variant === "stacked" ? 487 : 219}
+      className={cn(
+        "w-auto max-w-full object-contain",
+        variant === "stacked" ? "h-24" : "h-9 sm:h-10",
+        className,
       )}
-      <span className="sr-only">GROVISION</span>
-    </span>
+    />
   );
 }
