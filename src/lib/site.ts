@@ -22,9 +22,9 @@ export type ContactChannel = {
 };
 
 export const contactChannels: ContactChannel[] = [
-  { id: "email", label: "Email", value: "" },
-  { id: "whatsapp", label: "WhatsApp", value: "" },
-  { id: "phone", label: "Phone", value: "" },
+  { id: "email", label: "Email", value: "nmn0715mehra@gmail.com", href: "mailto:nmn0715mehra@gmail.com" },
+  { id: "whatsapp", label: "WhatsApp", value: "+91 88242 01010", href: "https://wa.me/918824201010" },
+  { id: "phone", label: "Phone", value: "+91 88242 01010", href: "tel:+918824201010" },
 ];
 
 export type SocialLink = {

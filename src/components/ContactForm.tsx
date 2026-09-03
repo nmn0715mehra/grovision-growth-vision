@@ -50,9 +50,8 @@ export function ContactForm() {
         </span>
         <h3 className="mt-6 text-xl font-bold text-navy sm:text-2xl">Thank you — noted.</h3>
         <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-          Your details have been recorded on this device. Message delivery and direct contact
-          channels are still being set up, so nothing has been emailed yet — they will be published
-          here as soon as they are live.
+          Your details have been recorded. Because the message inbox is still being connected,
+          please also reach out directly via WhatsApp or email so we can reply quickly.
         </p>
         <button
           type="button"
