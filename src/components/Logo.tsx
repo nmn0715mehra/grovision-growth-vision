@@ -1,9 +1,9 @@
 import { cn } from "@/lib/utils";
-import horizontalAsset from "@/assets/logo-horizontal.png.asset.json";
-import stackedNavyAsset from "@/assets/logo-stacked-navy.png.asset.json";
-import stackedLightAsset from "@/assets/logo-stacked-light.png.asset.json";
-import iconNavyAsset from "@/assets/logo-icon-navy.png.asset.json";
-import iconLightAsset from "@/assets/logo-icon-light.png.asset.json";
+const horizontalAsset = { url: "/brand/logo-horizontal.png" };
+const stackedNavyAsset = { url: "/brand/logo-stacked-navy.png" };
+const stackedLightAsset = { url: "/brand/logo-stacked-light.png" };
+const iconNavyAsset = { url: "/brand/logo-icon-navy.png" };
+const iconLightAsset = { url: "/brand/logo-icon-light.png" };
 
 /**
  * GROVISION logo — official supplied brand artwork.
