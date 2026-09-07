@@ -32,10 +32,24 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: Resolve build output directory
+        id: outdir
+        run: |
+          for d in dist/client .output/public dist/public dist; do
+            if [ -f "$d/index.html" ]; then
+              echo "path=$d" >> "$GITHUB_OUTPUT"
+              echo "Using $d"
+              exit 0
+            fi
+          done
+          echo "No build output with index.html found:" >&2
+          ls -R dist .output 2>/dev/null | head -50 >&2
+          exit 1
+
       - name: Add Pages fallbacks
         run: |
-          touch ./dist/client/.nojekyll
-          cp ./dist/client/index.html ./dist/client/404.html
+          touch "${{ steps.outdir.outputs.path }}/.nojekyll"
+          cp "${{ steps.outdir.outputs.path }}/index.html" "${{ steps.outdir.outputs.path }}/404.html"
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
@@ -43,7 +57,8 @@ jobs:
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist/client
+          path: ${{ steps.outdir.outputs.path }}
+
 
   deploy:
     environment:
