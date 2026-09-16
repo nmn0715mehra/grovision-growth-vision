@@ -42,6 +42,8 @@
   --color-gold-soft: var(--gold-soft);
   --color-beige: var(--beige);
   --color-ivory: var(--ivory);
+  --color-whatsapp: var(--whatsapp);
+  --color-whatsapp-deep: var(--whatsapp-deep);
 
   --font-sans: "Montserrat", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Montserrat", ui-sans-serif, system-ui, sans-serif;
@@ -59,6 +61,10 @@
   --gold-soft: oklch(0.86 0.045 80);
   --beige: oklch(0.951 0.0181 65.8);
   --ivory: oklch(0.985 0.0089 63);
+
+  /* Official WhatsApp brand green for the floating CTA only. */
+  --whatsapp: #25d366;
+  --whatsapp-deep: #1da851;
 
   --background: var(--ivory);
   --foreground: var(--navy);
