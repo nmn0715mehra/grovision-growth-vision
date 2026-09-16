@@ -21,9 +21,19 @@ export type ContactChannel = {
   href?: string;
 };
 
+/**
+ * Pre-filled WhatsApp conversation link. Single source of truth — the floating
+ * WhatsApp button and every WhatsApp contact reference use this exact link.
+ */
+const WHATSAPP_NUMBER = "918824201010";
+const WHATSAPP_MESSAGE =
+  "Welcome to GROVISION. ✦\nYour vision brought you here.\nLet’s turn that vision into something bigger. 🚀";
+
+export const whatsappHref = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
+
 export const contactChannels: ContactChannel[] = [
   { id: "email", label: "Email", value: "nmn0715mehra@gmail.com", href: "mailto:nmn0715mehra@gmail.com" },
-  { id: "whatsapp", label: "WhatsApp", value: "+91 88242 01010", href: "https://wa.me/918824201010" },
+  { id: "whatsapp", label: "WhatsApp", value: "+91 88242 01010", href: whatsappHref },
   { id: "phone", label: "Phone", value: "+91 88242 01010", href: "tel:+918824201010" },
 ];
 
