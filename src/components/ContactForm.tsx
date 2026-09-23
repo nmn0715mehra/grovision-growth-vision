@@ -9,14 +9,20 @@ const labelClass = "mb-2 block text-xs font-semibold uppercase tracking-[0.14em]
 
 type Errors = Partial<Record<"name" | "email" | "message", string>>;
 
+/**
+ * Google Apps Script Web App endpoint. A simple form-encoded POST (safelisted
+ * Content-Type, sent with mode: "no-cors") avoids CORS/preflight failures.
+ */
+const SUBMIT_ENDPOINT =
+  "https://script.google.com/macros/s/AKfycbxDVTPEhIab-ilGxBYCR74Hr5qfQBjmqSLVCDlxaF4PZWBYLP1gfIrCEcGbRv_Dn0Q/exec";
+
 export function ContactForm() {
   const [submitting, setSubmitting] = useState(false);
   const [sent, setSent] = useState(false);
   const [errors, setErrors] = useState<Errors>({});
+  const [submitError, setSubmitError] = useState(false);
 
-  // No message delivery is connected yet. When contact details or an inbox
-  // integration are configured, submit to a server function here.
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const form = event.currentTarget;
     const data = new FormData(form);
@@ -32,11 +38,30 @@ export function ContactForm() {
     if (Object.keys(next).length > 0) return;
 
     setSubmitting(true);
-    window.setTimeout(() => {
+    setSubmitError(false);
+
+    try {
+      await fetch(SUBMIT_ENDPOINT, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams({
+          name,
+          business: String(data.get("business") ?? "").trim(),
+          email,
+          phone: String(data.get("phone") ?? "").trim(),
+          industry: String(data.get("industry") ?? "").trim(),
+          service: String(data.get("need") ?? "").trim(),
+          message,
+        }).toString(),
+      });
       setSubmitting(false);
       setSent(true);
       form.reset();
-    }, 450);
+    } catch {
+      setSubmitting(false);
+      setSubmitError(true);
+    }
   }
 
   if (sent) {
@@ -48,10 +73,11 @@ export function ContactForm() {
         <span className="inline-flex h-12 w-12 items-center justify-center border border-gold text-gold">
           <Check aria-hidden="true" className="h-5 w-5" />
         </span>
-        <h3 className="mt-6 text-xl font-bold text-navy sm:text-2xl">Thank you — noted.</h3>
+        <h3 className="mt-6 text-xl font-bold text-navy sm:text-2xl">
+          Thank you for reaching out.
+        </h3>
         <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-          Your details have been recorded. Because the message inbox is still being connected,
-          please also reach out directly via WhatsApp or email so we can reply quickly.
+          Your enquiry has been received. We'll get back to you shortly.
         </p>
         <button
           type="button"
@@ -187,6 +213,12 @@ export function ContactForm() {
         </div>
       </div>
 
+      {submitError && (
+        <p role="alert" className="mt-4 text-sm text-destructive">
+          Something went wrong and your message wasn't sent. Please try again, or reach us on
+          WhatsApp or email.
+        </p>
+      )}
       <button
         type="submit"
         disabled={submitting}
@@ -195,8 +227,8 @@ export function ContactForm() {
         {submitting ? "Sending…" : "Start a Conversation"}
       </button>
       <p className="mt-4 text-xs leading-relaxed text-muted-foreground">
-        A free first consultation is available. Direct contact details are being set up and will be
-        published here shortly.
+        A free first consultation is available. You can also reach us directly on WhatsApp or
+        email.
       </p>
     </form>
   );
