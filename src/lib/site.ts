@@ -51,11 +51,11 @@ export const socialLinks: SocialLink[] = [
 
 export const navLinks = [
   { label: "Home", to: "/" },
+  { label: "Let's Grow Together", to: "/lets-grow-together" },
   { label: "About", to: "/about" },
   { label: "Services", to: "/services" },
   { label: "Portfolio", to: "/portfolio" },
   { label: "Case Studies", to: "/case-studies" },
-  { label: "Contact", to: "/contact" },
 ] as const;
 
 export const services = [
