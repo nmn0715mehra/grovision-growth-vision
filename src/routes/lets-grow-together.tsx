@@ -6,7 +6,7 @@ const title = "Contact GROVISION | Start a Conversation";
 const description =
   "Tell us about your business, your goals and where you want to go. A free first consultation with GROVISION — digital marketing strategy, SEO, social media and paid media.";
 
-export const Route = createFileRoute("/contact")({
+export const Route = createFileRoute("/lets-grow-together")({
   head: () => ({
     meta: [
       { title },
