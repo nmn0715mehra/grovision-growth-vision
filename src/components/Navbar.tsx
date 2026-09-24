@@ -49,7 +49,7 @@ export function Navbar() {
             </Link>
           ))}
           <Link
-            to="/contact"
+            to="/lets-grow-together"
             className="border border-navy bg-navy px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.14em] text-ivory transition-all duration-300 hover:-translate-y-0.5 hover:bg-navy-soft hover:shadow-card"
           >
             Let&apos;s Grow Together
@@ -86,7 +86,7 @@ export function Navbar() {
             </Link>
           ))}
           <Link
-            to="/contact"
+            to="/lets-grow-together"
             className="mt-5 border border-navy bg-navy px-5 py-3.5 text-center text-xs font-semibold uppercase tracking-[0.14em] text-ivory"
           >
             Let&apos;s Grow Together

@@ -15,14 +15,35 @@ const socialIcons = {
   linkedin: Linkedin,
 } as const;
 
-export function ContactSection({ heading = "h2" }: { heading?: "h1" | "h2" }) {
+export function ContactSection({
+  heading = "h2",
+  leadPage = false,
+}: {
+  heading?: "h1" | "h2";
+  leadPage?: boolean;
+}) {
   return (
     <Section id="contact" tone="beige">
       <SectionHeading
         as={heading}
-        eyebrow="Contact"
-        title="Ready to give your vision a direction?"
-        intro="Tell us about your business, your goals and where you want to go."
+        eyebrow={leadPage ? "Growth Consultation" : "Contact"}
+        title={leadPage ? "LET'S GROW TOGETHER" : "Ready to give your vision a direction?"}
+        intro={
+          leadPage ? (
+            <div className="space-y-3">
+              <p className="font-semibold text-navy">
+                Have a vision for your business? Let&apos;s turn it into growth.
+              </p>
+              <p className="max-w-2xl">
+                Share your business, goals and requirements with GROVISION. We&apos;ll start with a
+                focused conversation about where you are, where you want to go and how the right
+                digital direction can help you move forward.
+              </p>
+            </div>
+          ) : (
+            "Tell us about your business, your goals and where you want to go."
+          )
+        }
       />
 
       <div className="mt-14 grid gap-10 lg:grid-cols-[1fr_0.75fr] lg:gap-16">

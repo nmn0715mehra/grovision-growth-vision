@@ -4,6 +4,9 @@
     <loc>https://grovision.shop/</loc>
   </url>
   <url>
+    <loc>https://grovision.shop/lets-grow-together</loc>
+  </url>
+  <url>
     <loc>https://grovision.shop/about</loc>
   </url>
   <url>
@@ -14,8 +17,5 @@
   </url>
   <url>
     <loc>https://grovision.shop/case-studies</loc>
-  </url>
-  <url>
-    <loc>https://grovision.shop/contact</loc>
   </url>
 </urlset>

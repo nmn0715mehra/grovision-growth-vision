@@ -59,7 +59,7 @@ export function Hero() {
           <Reveal delay={280}>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <Link
-                to="/contact"
+                to="/lets-grow-together"
                 className="group inline-flex items-center justify-center gap-2 border border-navy bg-navy px-7 py-4 text-xs font-semibold uppercase tracking-[0.16em] text-ivory transition-all duration-300 hover:-translate-y-0.5 hover:bg-navy-soft hover:shadow-lift"
               >
                 Let&apos;s Grow Together
