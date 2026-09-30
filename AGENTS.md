@@ -8,3 +8,5 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Keep `/lets-grow-together` as the existing inquiry-form page and `/contact` as a separate direct-channels page; this preserves one shared form while making Contact the final navigation destination.
