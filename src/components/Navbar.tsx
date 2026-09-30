@@ -37,7 +37,7 @@ export function Navbar() {
         </Link>
 
         <nav aria-label="Main" className="hidden items-center gap-7 lg:flex">
-          {navLinks.map((link) => (
+          {navLinks.filter((link) => link.to !== "/contact").map((link) => (
             <Link
               key={link.to}
               to={link.to}
@@ -49,10 +49,10 @@ export function Navbar() {
             </Link>
           ))}
           <Link
-            to="/lets-grow-together"
+            to="/contact"
             className="border border-navy bg-navy px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.14em] text-ivory transition-all duration-300 hover:-translate-y-0.5 hover:bg-navy-soft hover:shadow-card"
           >
-            Let&apos;s Grow Together
+            Contact
           </Link>
         </nav>
 
@@ -74,7 +74,7 @@ export function Navbar() {
         className="border-t border-border bg-ivory px-5 pb-6 pt-2 sm:px-8 lg:hidden"
       >
         <nav aria-label="Mobile" className="flex flex-col">
-          {navLinks.map((link) => (
+          {navLinks.filter((link) => link.to !== "/contact").map((link) => (
             <Link
               key={link.to}
               to={link.to}
@@ -86,10 +86,10 @@ export function Navbar() {
             </Link>
           ))}
           <Link
-            to="/lets-grow-together"
+            to="/contact"
             className="mt-5 border border-navy bg-navy px-5 py-3.5 text-center text-xs font-semibold uppercase tracking-[0.14em] text-ivory"
           >
-            Let&apos;s Grow Together
+            Contact
           </Link>
         </nav>
       </div>
