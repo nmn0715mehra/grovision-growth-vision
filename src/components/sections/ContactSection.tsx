@@ -2,6 +2,8 @@ import { Instagram, Linkedin, Mail, MessageCircle, Phone } from "lucide-react";
 import { Section, SectionHeading } from "../SectionHeading";
 import { Reveal } from "../Reveal";
 import { ContactForm } from "../ContactForm";
+import { Link } from "@tanstack/react-router";
+import { ArrowRight } from "lucide-react";
 import { contactChannels, socialLinks } from "@/lib/site";
 
 const channelIcons = {
@@ -48,7 +50,22 @@ export function ContactSection({
 
       <div className="mt-14 grid gap-10 lg:grid-cols-[1fr_0.75fr] lg:gap-16">
         <Reveal>
-          <ContactForm />
+          {leadPage ? (
+            <ContactForm />
+          ) : (
+            <div className="border border-border bg-ivory p-6 sm:p-8">
+              <p className="text-sm leading-relaxed text-muted-foreground">
+                Share your business, goals and requirements through our inquiry page and start a
+                focused conversation with GROVISION.
+              </p>
+              <Link
+                to="/lets-grow-together"
+                className="mt-6 inline-flex items-center gap-2 border border-navy bg-navy px-5 py-3 text-xs font-semibold uppercase tracking-[0.14em] text-ivory transition-colors hover:bg-navy-soft"
+              >
+                Start a Conversation <ArrowRight aria-hidden="true" className="h-4 w-4" />
+              </Link>
+            </div>
+          )}
         </Reveal>
 
         <div className="space-y-10">
