@@ -10,3 +10,4 @@
 <!-- LOVABLE:END -->
 
 - Keep `/lets-grow-together` as the existing inquiry-form page and `/contact` as a separate direct-channels page; this preserves one shared form while making Contact the final navigation destination.
+- The inquiry form renders only on `/lets-grow-together`; other pages use ContactSection CTA mode linking there, to avoid duplicate forms.
