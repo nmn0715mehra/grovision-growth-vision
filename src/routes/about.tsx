@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { AboutSection } from "@/components/sections/AboutSection";
 import { Philosophy } from "@/components/sections/Philosophy";
+import { BrandIntro } from "@/components/sections/BrandIntro";
 import { Approach } from "@/components/sections/Approach";
 import { ContactSection } from "@/components/sections/ContactSection";
 
@@ -27,6 +28,7 @@ function AboutPage() {
   return (
     <>
       <AboutSection heading="h1" />
+      <BrandIntro />
       <Philosophy />
       <Approach />
       <ContactSection />
