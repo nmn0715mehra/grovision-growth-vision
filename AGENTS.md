@@ -9,5 +9,4 @@
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
 
-- Keep `/lets-grow-together` as the existing inquiry-form page and `/contact` as a separate direct-channels page; this preserves one shared form while making Contact the final navigation destination.
-- The inquiry form renders only on `/lets-grow-together`; other pages use ContactSection CTA mode linking there, to avoid duplicate forms.
+- Render the single inquiry form in the homepage's `#lets-grow-together` section immediately after the hero; keep `/lets-grow-together` as a redirect to that anchor and `/contact` as a separate direct-channels page so the primary form is encountered in the intended homepage journey without duplicate form implementations.
