@@ -41,7 +41,7 @@ export function Navbar() {
             <Link
               key={`${link.to}${link.hash ? `#${link.hash}` : ""}`}
               to={link.to}
-              hash={link.hash}
+              {...(link.hash ? { hash: link.hash } : {})}
               activeOptions={{ exact: link.to === "/", includeHash: link.to === "/" }}
               className="text-sm font-medium text-navy/75 transition-colors hover:text-navy"
               activeProps={{ className: "!text-navy font-semibold" }}
@@ -79,7 +79,7 @@ export function Navbar() {
             <Link
               key={`${link.to}${link.hash ? `#${link.hash}` : ""}`}
               to={link.to}
-              hash={link.hash}
+              {...(link.hash ? { hash: link.hash } : {})}
               activeOptions={{ exact: link.to === "/", includeHash: link.to === "/" }}
               className="border-b border-border py-3.5 text-base font-medium text-navy/80"
               activeProps={{ className: "!text-navy font-semibold" }}
