@@ -25,7 +25,7 @@ export function ContactSection({
   leadPage?: boolean;
 }) {
   return (
-    <Section id="contact" tone="beige">
+    <Section id={leadPage ? "lets-grow-together" : "contact"} tone="beige">
       <SectionHeading
         as={heading}
         eyebrow={leadPage ? "Growth Consultation" : "Contact"}
@@ -59,7 +59,8 @@ export function ContactSection({
                 focused conversation with GROVISION.
               </p>
               <Link
-                to="/lets-grow-together"
+                to="/"
+                hash="lets-grow-together"
                 className="mt-6 inline-flex items-center gap-2 border border-navy bg-navy px-5 py-3 text-xs font-semibold uppercase tracking-[0.14em] text-ivory transition-colors hover:bg-navy-soft"
               >
                 Start a Conversation <ArrowRight aria-hidden="true" className="h-4 w-4" />

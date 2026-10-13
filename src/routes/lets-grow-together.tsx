@@ -1,6 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { ContactSection } from "@/components/sections/ContactSection";
-import { Philosophy } from "@/components/sections/Philosophy";
+import { createFileRoute, Navigate } from "@tanstack/react-router";
 
 const title = "Let's Grow Together | GROVISION Growth Consultation";
 const description =
@@ -19,14 +17,5 @@ export const Route = createFileRoute("/lets-grow-together")({
     ],
     links: [{ rel: "canonical", href: "/lets-grow-together" }],
   }),
-  component: LetsGrowTogetherPage,
+  component: () => <Navigate to="/" hash="lets-grow-together" replace />,
 });
-
-function LetsGrowTogetherPage() {
-  return (
-    <>
-      <ContactSection heading="h1" leadPage />
-      <Philosophy />
-    </>
-  );
-}
