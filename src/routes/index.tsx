@@ -47,15 +47,15 @@ function Index() {
   return (
     <>
       <Hero />
-      <BrandIntro />
+      <ContactSection heading="h2" leadPage />
+      <AboutSection />
       <ServicesSection />
-      <WhoWeHelp />
-      <Approach />
       <PortfolioSection />
       <CaseStudiesSection />
-      <AboutSection />
+      <BrandIntro />
+      <WhoWeHelp />
+      <Approach />
       <Philosophy />
-      <ContactSection />
     </>
   );
 }

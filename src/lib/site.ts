@@ -50,13 +50,13 @@ export const socialLinks: SocialLink[] = [
 ];
 
 export const navLinks = [
-  { label: "Home", to: "/" },
-  { label: "Let's Grow Together", to: "/lets-grow-together" },
-  { label: "About", to: "/about" },
-  { label: "Services", to: "/services" },
-  { label: "Portfolio", to: "/portfolio" },
-  { label: "Case Studies", to: "/case-studies" },
-  { label: "Contact", to: "/contact" },
+  { label: "Home", to: "/", hash: undefined },
+  { label: "Let's Grow Together", to: "/", hash: "lets-grow-together" },
+  { label: "About", to: "/about", hash: undefined },
+  { label: "Services", to: "/services", hash: undefined },
+  { label: "Portfolio", to: "/portfolio", hash: undefined },
+  { label: "Case Studies", to: "/case-studies", hash: undefined },
+  { label: "Contact", to: "/contact", hash: undefined },
 ] as const;
 
 export const services = [

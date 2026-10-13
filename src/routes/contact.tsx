@@ -74,7 +74,8 @@ function ContactPage() {
                 your business, where you want to go and whether GROVISION is the right fit.
               </p>
               <Link
-                to="/lets-grow-together"
+                to="/"
+                hash="lets-grow-together"
                 className="mt-6 inline-flex items-center gap-2 border border-navy bg-navy px-5 py-3 text-xs font-semibold uppercase tracking-[0.14em] text-ivory transition-colors hover:bg-navy-soft"
               >
                 Let&apos;s Grow Together <ArrowRight aria-hidden="true" className="h-4 w-4" />

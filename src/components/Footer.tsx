@@ -34,9 +34,10 @@ export function Footer() {
             <h2 className="eyebrow text-ivory/60">Navigate</h2>
             <ul className="mt-5 space-y-3">
               {navLinks.map((link) => (
-                <li key={link.to}>
+                <li key={`${link.to}${link.hash ? `#${link.hash}` : ""}`}>
                   <Link
                     to={link.to}
+                    {...(link.hash ? { hash: link.hash } : {})}
                     className="text-sm text-ivory/80 transition-colors hover:text-gold"
                   >
                     {link.label}

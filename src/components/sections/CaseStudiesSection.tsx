@@ -30,7 +30,8 @@ export function CaseStudiesSection({ heading = "h2" }: { heading?: "h1" | "h2" }
             as visible as the result.
           </p>
           <Link
-            to="/lets-grow-together"
+            to="/"
+            hash="lets-grow-together"
             className="shrink-0 border border-navy bg-navy px-6 py-3.5 text-xs font-semibold uppercase tracking-[0.16em] text-ivory transition-all duration-300 hover:-translate-y-0.5 hover:bg-navy-soft hover:shadow-card"
           >
             Start a Conversation
