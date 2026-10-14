@@ -53,9 +53,9 @@ function Index() {
       <PortfolioSection />
       <CaseStudiesSection />
       <BrandIntro />
+      <Philosophy />
       <WhoWeHelp />
       <Approach />
-      <Philosophy />
     </>
   );
 }

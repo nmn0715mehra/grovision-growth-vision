@@ -1,4 +1,4 @@
-import { createFileRoute, Navigate } from "@tanstack/react-router";
+import { createFileRoute, redirect } from "@tanstack/react-router";
 
 const title = "Let's Grow Together | GROVISION Growth Consultation";
 const description =
@@ -12,10 +12,12 @@ export const Route = createFileRoute("/lets-grow-together")({
       { property: "og:title", content: title },
       { property: "og:description", content: description },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "/lets-grow-together" },
+      { property: "og:url", content: "/" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: "/lets-grow-together" }],
+    links: [{ rel: "canonical", href: "/" }],
   }),
-  component: () => <Navigate to="/" hash="lets-grow-together" replace />,
+  beforeLoad: () => {
+    throw redirect({ to: "/", hash: "lets-grow-together", replace: true });
+  },
 });
