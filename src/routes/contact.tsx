@@ -34,7 +34,7 @@ function ContactPage() {
         as="h1"
         eyebrow="Contact"
         title="GET IN TOUCH"
-        intro="Reach GROVISION directly, or share your business and goals through our inquiry page."
+        intro="Reach GROVISION directly, or share your business and goals in our Let’s Grow Together section."
       />
       <div className="mt-14 grid gap-12 lg:grid-cols-[1fr_0.75fr] lg:gap-16">
         <Reveal>

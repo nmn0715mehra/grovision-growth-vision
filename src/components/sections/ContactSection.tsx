@@ -55,8 +55,8 @@ export function ContactSection({
           ) : (
             <div className="border border-border bg-ivory p-6 sm:p-8">
               <p className="text-sm leading-relaxed text-muted-foreground">
-                Share your business, goals and requirements through our inquiry page and start a
-                focused conversation with GROVISION.
+                Share your business, goals and requirements in our Let&apos;s Grow Together section
+                and start a focused conversation with GROVISION.
               </p>
               <Link
                 to="/"
