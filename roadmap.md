@@ -10,4 +10,4 @@
 - [x] Keep the confirmed existing GTM-KXPBJZGP installation without adding a duplicate container
 - [x] Move the single existing inquiry form directly after the homepage hero and make Let's Grow Together navigate to its homepage anchor
 - [x] Preserve the standalone Contact page and update legacy form-page links to the homepage anchor
-- [ ] Verify homepage section order, one form instance, desktop/mobile navigation, route redirects, and unchanged submission integration
+- [x] Verify homepage section order, one form instance, desktop/mobile navigation, route redirects, and unchanged submission integration
