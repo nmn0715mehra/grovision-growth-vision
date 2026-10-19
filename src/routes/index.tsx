@@ -49,13 +49,13 @@ function Index() {
       <Hero />
       <ContactSection heading="h2" leadPage />
       <ServicesSection />
-      <WhoWeHelp />
-      <Approach />
       <PortfolioSection />
       <CaseStudiesSection />
       <AboutSection />
       <BrandIntro />
       <Philosophy />
+      <WhoWeHelp />
+      <Approach />
     </>
   );
 }
