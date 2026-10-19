@@ -1,13 +1,6 @@
-# GROVISION restructuring
+# GROVISION navigation and homepage structure
 
-- [x] Rename Contact route to /lets-grow-together without duplicating the form
-- [x] Reorder navbar and update all inquiry links
-- [x] Add premium inquiry-page introduction while retaining supporting content
-- [x] Update sitemap and route metadata
-- [x] Verify form behavior, links, routes, and responsive layout
-- [x] Keep the existing Let's Grow Together inquiry page second and restore Contact as a distinct final page
-- [x] Verify the seven-page navigation, Contact page, and unchanged submission flow
-- [x] Keep the confirmed existing GTM-KXPBJZGP installation without adding a duplicate container
-- [x] Move the single existing inquiry form directly after the homepage hero and make Let's Grow Together navigate to its homepage anchor
-- [x] Preserve the standalone Contact page and update legacy form-page links to the homepage anchor
-- [x] Verify homepage section order, one form instance, desktop/mobile navigation, route redirects, and unchanged submission integration
+- [x] Keep the existing single inquiry form immediately after the homepage hero, with the legacy route and inquiry links targeting its anchor
+- [x] Order the homepage primary sections as Hero, Let's Grow Together, Services, Portfolio, Case Studies, then About
+- [x] Order shared navigation as Home, Let's Grow Together, Services, Portfolio, Case Studies, About, Contact; keep Contact as the separate header CTA
+- [x] Verify rendered section sequence, one homepage form and no Contact-page form, route links, desktop/mobile navigation, and clean build

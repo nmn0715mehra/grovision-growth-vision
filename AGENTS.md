@@ -9,4 +9,4 @@
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
 
-- Render the single inquiry form in the homepage's `#lets-grow-together` section immediately after the hero; keep `/lets-grow-together` as a redirect to that anchor and `/contact` as a separate direct-channels page so the primary form is encountered in the intended homepage journey without duplicate form implementations.
+- Keep the single inquiry form in the homepage's `#lets-grow-together` section immediately after the hero; order the homepage's primary sections as Hero, Let's Grow Together, Services, Portfolio, Case Studies, then About, while retaining secondary content. Keep `/lets-grow-together` as a redirect to that anchor and `/contact` as a separate page so the primary form appears once in the intended journey.
