@@ -48,10 +48,10 @@ function Index() {
     <>
       <Hero />
       <ContactSection heading="h2" leadPage />
-      <AboutSection />
       <ServicesSection />
       <PortfolioSection />
       <CaseStudiesSection />
+      <AboutSection />
       <BrandIntro />
       <Philosophy />
       <WhoWeHelp />
