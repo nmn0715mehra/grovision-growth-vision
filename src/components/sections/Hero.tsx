@@ -32,7 +32,7 @@ function GrowthVisual() {
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden bg-beige px-5 pb-20 pt-16 sm:px-8 sm:pb-24 sm:pt-20 lg:pb-32 lg:pt-24">
+    <section className="relative overflow-hidden bg-beige px-5 pb-12 pt-16 sm:px-8 sm:pb-14 sm:pt-20 lg:pb-16 lg:pt-24">
       <div aria-hidden="true" className="grid-lines absolute inset-0 opacity-70" />
       <div className="relative mx-auto grid w-full max-w-6xl items-center gap-14 lg:grid-cols-[1.1fr_0.9fr] lg:gap-20">
         <div>
