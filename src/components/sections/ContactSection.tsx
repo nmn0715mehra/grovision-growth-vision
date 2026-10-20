@@ -28,7 +28,7 @@ export function ContactSection({
     <Section
       id={leadPage ? "lets-grow-together" : "contact"}
       tone="beige"
-      className={leadPage ? "pt-12 sm:pt-14 lg:pt-16" : undefined}
+      {...(leadPage ? { className: "pt-12 sm:pt-14 lg:pt-16" } : {})}
     >
       <SectionHeading
         as={heading}
