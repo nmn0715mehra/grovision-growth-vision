@@ -25,7 +25,11 @@ export function ContactSection({
   leadPage?: boolean;
 }) {
   return (
-    <Section id={leadPage ? "lets-grow-together" : "contact"} tone="beige">
+    <Section
+      id={leadPage ? "lets-grow-together" : "contact"}
+      tone="beige"
+      className={leadPage ? "pt-12 sm:pt-14 lg:pt-16" : undefined}
+    >
       <SectionHeading
         as={heading}
         eyebrow={leadPage ? "Growth Consultation" : "Contact"}
