@@ -45,7 +45,7 @@ function StrategicGrowthCard() {
 
       <div className="relative overflow-hidden rounded-xl border border-border/80 bg-white shadow-card transition-all duration-300 hover:border-gold/50 hover:shadow-lift">
         {/* Card Header */}
-        <div className="border-b border-border/60 bg-ivory/70 px-5 py-3.5 flex items-center justify-between">
+        <div className="border-b border-border/60 bg-ivory/70 px-4 py-3 sm:px-5 sm:py-3.5 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <span className="flex h-2 w-2 rounded-full bg-gold animate-pulse" />
             <span className="text-[11px] font-semibold uppercase tracking-widest text-navy/85">
@@ -58,13 +58,13 @@ function StrategicGrowthCard() {
         </div>
 
         {/* 4 Pillars List */}
-        <div className="divide-y divide-border/50 p-2 sm:p-2.5">
+        <div className="divide-y divide-border/50 p-1.5 sm:p-2.5">
           {pillars.map((item) => {
             const Icon = item.icon;
             return (
               <div
                 key={item.num}
-                className="group flex items-start gap-3 p-3 rounded-lg transition-colors hover:bg-beige/40"
+                className="group flex items-start gap-3 p-2.5 sm:p-3 rounded-lg transition-colors hover:bg-beige/40"
               >
                 <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md border border-border bg-ivory text-navy group-hover:border-gold group-hover:text-gold transition-colors">
                   <Icon className="h-4 w-4" />
@@ -78,7 +78,7 @@ function StrategicGrowthCard() {
                       {item.badge}
                     </span>
                   </div>
-                  <p className="mt-1 text-[11px] leading-relaxed text-muted-foreground line-clamp-2">
+                  <p className="mt-0.5 text-[11px] sm:text-xs leading-relaxed text-muted-foreground line-clamp-2">
                     {item.desc}
                   </p>
                 </div>
@@ -88,10 +88,10 @@ function StrategicGrowthCard() {
         </div>
 
         {/* Card Footer Banner */}
-        <div className="border-t border-border/60 bg-navy px-5 py-3 flex items-center justify-between text-ivory">
+        <div className="border-t border-border/60 bg-navy px-4 py-3 sm:px-5 flex items-center justify-between text-ivory">
           <div className="flex items-center gap-2">
             <CheckCircle2 className="h-3.5 w-3.5 text-gold shrink-0" />
-            <span className="text-[11px] text-ivory/80">
+            <span className="text-[11px] sm:text-xs text-ivory/80">
               Free First Strategic Consultation
             </span>
           </div>
@@ -154,24 +154,11 @@ export function Hero() {
                 Explore Services
               </Link>
             </div>
-
-            {/* Mobile-only compact reassurance pills: takes minimal vertical space on phones */}
-            <div className="mt-6 flex flex-wrap items-center gap-2 lg:hidden">
-              <span className="inline-flex items-center gap-1.5 rounded-full border border-navy/15 bg-white/70 px-3 py-1 text-[11px] font-medium text-navy">
-                <CheckCircle2 className="h-3 w-3 text-gold" /> Intent-Driven SEO
-              </span>
-              <span className="inline-flex items-center gap-1.5 rounded-full border border-navy/15 bg-white/70 px-3 py-1 text-[11px] font-medium text-navy">
-                <CheckCircle2 className="h-3 w-3 text-gold" /> Brand Positioning
-              </span>
-              <span className="inline-flex items-center gap-1.5 rounded-full border border-navy/15 bg-white/70 px-3 py-1 text-[11px] font-medium text-navy">
-                <CheckCircle2 className="h-3 w-3 text-gold" /> Free Consultation
-              </span>
-            </div>
           </Reveal>
         </div>
 
-        {/* Desktop-only high-value Strategic Growth card: hidden on mobile so it never pushes down the page */}
-        <div className="hidden lg:block">
+        {/* Strategic Growth Framework card: responsive on mobile and desktop */}
+        <div className="w-full mt-2 lg:mt-0">
           <Reveal delay={200}>
             <StrategicGrowthCard />
           </Reveal>
