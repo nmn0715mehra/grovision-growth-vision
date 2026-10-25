@@ -5,7 +5,7 @@ import { services } from "@/lib/site";
 
 export function ServicesSection({ heading = "h2" }: { heading?: "h1" | "h2" }) {
   return (
-    <Section id="services" tone="beige">
+    <Section id="services" tone="beige" className="border-t border-border/70">
       <SectionHeading
         as={heading}
         eyebrow="Services"

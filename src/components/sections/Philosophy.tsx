@@ -12,7 +12,7 @@ export function Philosophy() {
   return (
     <section
       id="philosophy"
-      className="relative overflow-hidden bg-navy px-5 py-24 text-ivory sm:px-8 sm:py-28 lg:py-32"
+      className="relative overflow-hidden bg-navy px-5 py-12 text-ivory sm:px-8 sm:py-14 lg:py-16"
     >
       <div aria-hidden="true" className="absolute inset-0 opacity-25">
         <div className="spin-slow absolute -right-24 -top-24 h-80 w-80 rounded-full border border-gold/30" />

@@ -93,7 +93,7 @@ export function Section({
   return (
     <section
       id={id}
-      className={cn("scroll-mt-24 px-5 py-20 sm:px-8 sm:py-24 lg:py-28", tones[tone], className)}
+      className={cn("scroll-mt-24 px-5 py-12 sm:px-8 sm:py-14 lg:py-16", tones[tone], className)}
     >
       <div className="mx-auto w-full max-w-6xl">{children}</div>
     </section>

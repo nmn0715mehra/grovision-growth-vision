@@ -53,7 +53,7 @@ export function BlogIndexPage() {
   const regularPosts = featuredPost ? filtered.filter((p) => p.id !== featuredPost.id) : filtered;
 
   return (
-    <div className="bg-ivory py-12 sm:py-20 text-navy">
+    <div className="bg-ivory py-10 sm:py-12 lg:py-16 text-navy">
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
         {/* Header Hero */}
         <div className="border-b border-border pb-12 sm:pb-16">

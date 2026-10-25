@@ -110,7 +110,7 @@ function StrategicGrowthCard() {
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden bg-beige px-5 pb-12 pt-16 sm:px-8 sm:pb-14 sm:pt-20 lg:pb-16 lg:pt-24">
+    <section className="relative overflow-hidden bg-beige px-5 pb-10 pt-12 sm:px-8 sm:pb-12 sm:pt-16 lg:pb-14 lg:pt-20">
       <div aria-hidden="true" className="grid-lines absolute inset-0 opacity-70" />
       <div className="relative mx-auto grid w-full max-w-6xl items-center gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
         <div>
