@@ -56,10 +56,7 @@ export function Footer() {
                   <li key={channel.id} className="flex items-start gap-3 text-sm text-ivory/80">
                     <Icon aria-hidden="true" className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
                     {channel.value ? (
-                      <a
-                        href={channel.href ?? "#"}
-                        className="transition-colors hover:text-gold"
-                      >
+                      <a href={channel.href ?? "#"} className="transition-colors hover:text-gold">
                         {channel.value}
                       </a>
                     ) : (
@@ -106,9 +103,7 @@ export function Footer() {
         </div>
 
         <div className="mt-14 border-t border-ivory/15 pt-6">
-          <p className="text-xs text-ivory/55">
-            &copy; GROVISION {year}. All rights reserved.
-          </p>
+          <p className="text-xs text-ivory/55">&copy; GROVISION {year}. All rights reserved.</p>
         </div>
       </div>
     </footer>

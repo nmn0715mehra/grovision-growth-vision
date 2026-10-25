@@ -16,6 +16,22 @@ import { Route as ContactRouteImport } from './routes/contact'
 import { Route as LetsGrowTogetherRouteImport } from './routes/lets-grow-together'
 import { Route as PortfolioRouteImport } from './routes/portfolio'
 import { Route as ServicesRouteImport } from './routes/services'
+import { Route as AdminIndexRouteImport } from './routes/admin/index'
+import { Route as AdminActivityRouteImport } from './routes/admin/activity'
+import { Route as AdminAuditsRouteImport } from './routes/admin/audits'
+import { Route as AdminBacklinksRouteImport } from './routes/admin/backlinks'
+import { Route as AdminBlogsRouteImport } from './routes/admin/blogs'
+import { Route as AdminCompetitorsRouteImport } from './routes/admin/competitors'
+import { Route as AdminContentRouteImport } from './routes/admin/content'
+import { Route as AdminIntegrationsRouteImport } from './routes/admin/integrations'
+import { Route as AdminKeywordsRouteImport } from './routes/admin/keywords'
+import { Route as AdminLoginRouteImport } from './routes/admin/login'
+import { Route as AdminPagesRouteImport } from './routes/admin/pages'
+import { Route as AdminReportsRouteImport } from './routes/admin/reports'
+import { Route as AdminSettingsRouteImport } from './routes/admin/settings'
+import { Route as AdminTasksRouteImport } from './routes/admin/tasks'
+import { Route as BlogIndexRouteImport } from './routes/blog/index'
+import { Route as BlogSlugRouteImport } from './routes/blog/$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -52,6 +68,86 @@ const ServicesRoute = ServicesRouteImport.update({
   path: '/services',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdminIndexRoute = AdminIndexRouteImport.update({
+  id: '/admin/',
+  path: '/admin/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminActivityRoute = AdminActivityRouteImport.update({
+  id: '/admin/activity',
+  path: '/admin/activity',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminAuditsRoute = AdminAuditsRouteImport.update({
+  id: '/admin/audits',
+  path: '/admin/audits',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminBacklinksRoute = AdminBacklinksRouteImport.update({
+  id: '/admin/backlinks',
+  path: '/admin/backlinks',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminBlogsRoute = AdminBlogsRouteImport.update({
+  id: '/admin/blogs',
+  path: '/admin/blogs',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminCompetitorsRoute = AdminCompetitorsRouteImport.update({
+  id: '/admin/competitors',
+  path: '/admin/competitors',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminContentRoute = AdminContentRouteImport.update({
+  id: '/admin/content',
+  path: '/admin/content',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminIntegrationsRoute = AdminIntegrationsRouteImport.update({
+  id: '/admin/integrations',
+  path: '/admin/integrations',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminKeywordsRoute = AdminKeywordsRouteImport.update({
+  id: '/admin/keywords',
+  path: '/admin/keywords',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminLoginRoute = AdminLoginRouteImport.update({
+  id: '/admin/login',
+  path: '/admin/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminPagesRoute = AdminPagesRouteImport.update({
+  id: '/admin/pages',
+  path: '/admin/pages',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminReportsRoute = AdminReportsRouteImport.update({
+  id: '/admin/reports',
+  path: '/admin/reports',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminSettingsRoute = AdminSettingsRouteImport.update({
+  id: '/admin/settings',
+  path: '/admin/settings',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminTasksRoute = AdminTasksRouteImport.update({
+  id: '/admin/tasks',
+  path: '/admin/tasks',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlogIndexRoute = BlogIndexRouteImport.update({
+  id: '/blog/',
+  path: '/blog/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlogSlugRoute = BlogSlugRouteImport.update({
+  id: '/blog/$slug',
+  path: '/blog/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -61,6 +157,22 @@ export interface FileRoutesByFullPath {
   '/lets-grow-together': typeof LetsGrowTogetherRoute
   '/portfolio': typeof PortfolioRoute
   '/services': typeof ServicesRoute
+  '/admin/activity': typeof AdminActivityRoute
+  '/admin/audits': typeof AdminAuditsRoute
+  '/admin/backlinks': typeof AdminBacklinksRoute
+  '/admin/blogs': typeof AdminBlogsRoute
+  '/admin/competitors': typeof AdminCompetitorsRoute
+  '/admin/content': typeof AdminContentRoute
+  '/admin/integrations': typeof AdminIntegrationsRoute
+  '/admin/keywords': typeof AdminKeywordsRoute
+  '/admin/login': typeof AdminLoginRoute
+  '/admin/pages': typeof AdminPagesRoute
+  '/admin/reports': typeof AdminReportsRoute
+  '/admin/settings': typeof AdminSettingsRoute
+  '/admin/tasks': typeof AdminTasksRoute
+  '/blog/$slug': typeof BlogSlugRoute
+  '/admin/': typeof AdminIndexRoute
+  '/blog/': typeof BlogIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -70,6 +182,22 @@ export interface FileRoutesByTo {
   '/lets-grow-together': typeof LetsGrowTogetherRoute
   '/portfolio': typeof PortfolioRoute
   '/services': typeof ServicesRoute
+  '/admin/activity': typeof AdminActivityRoute
+  '/admin/audits': typeof AdminAuditsRoute
+  '/admin/backlinks': typeof AdminBacklinksRoute
+  '/admin/blogs': typeof AdminBlogsRoute
+  '/admin/competitors': typeof AdminCompetitorsRoute
+  '/admin/content': typeof AdminContentRoute
+  '/admin/integrations': typeof AdminIntegrationsRoute
+  '/admin/keywords': typeof AdminKeywordsRoute
+  '/admin/login': typeof AdminLoginRoute
+  '/admin/pages': typeof AdminPagesRoute
+  '/admin/reports': typeof AdminReportsRoute
+  '/admin/settings': typeof AdminSettingsRoute
+  '/admin/tasks': typeof AdminTasksRoute
+  '/blog/$slug': typeof BlogSlugRoute
+  '/admin': typeof AdminIndexRoute
+  '/blog': typeof BlogIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -80,6 +208,22 @@ export interface FileRoutesById {
   '/lets-grow-together': typeof LetsGrowTogetherRoute
   '/portfolio': typeof PortfolioRoute
   '/services': typeof ServicesRoute
+  '/admin/activity': typeof AdminActivityRoute
+  '/admin/audits': typeof AdminAuditsRoute
+  '/admin/backlinks': typeof AdminBacklinksRoute
+  '/admin/blogs': typeof AdminBlogsRoute
+  '/admin/competitors': typeof AdminCompetitorsRoute
+  '/admin/content': typeof AdminContentRoute
+  '/admin/integrations': typeof AdminIntegrationsRoute
+  '/admin/keywords': typeof AdminKeywordsRoute
+  '/admin/login': typeof AdminLoginRoute
+  '/admin/pages': typeof AdminPagesRoute
+  '/admin/reports': typeof AdminReportsRoute
+  '/admin/settings': typeof AdminSettingsRoute
+  '/admin/tasks': typeof AdminTasksRoute
+  '/blog/$slug': typeof BlogSlugRoute
+  '/admin/': typeof AdminIndexRoute
+  '/blog/': typeof BlogIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -91,6 +235,22 @@ export interface FileRouteTypes {
     | '/lets-grow-together'
     | '/portfolio'
     | '/services'
+    | '/admin/activity'
+    | '/admin/audits'
+    | '/admin/backlinks'
+    | '/admin/blogs'
+    | '/admin/competitors'
+    | '/admin/content'
+    | '/admin/integrations'
+    | '/admin/keywords'
+    | '/admin/login'
+    | '/admin/pages'
+    | '/admin/reports'
+    | '/admin/settings'
+    | '/admin/tasks'
+    | '/blog/$slug'
+    | '/admin/'
+    | '/blog/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -100,6 +260,22 @@ export interface FileRouteTypes {
     | '/lets-grow-together'
     | '/portfolio'
     | '/services'
+    | '/admin/activity'
+    | '/admin/audits'
+    | '/admin/backlinks'
+    | '/admin/blogs'
+    | '/admin/competitors'
+    | '/admin/content'
+    | '/admin/integrations'
+    | '/admin/keywords'
+    | '/admin/login'
+    | '/admin/pages'
+    | '/admin/reports'
+    | '/admin/settings'
+    | '/admin/tasks'
+    | '/blog/$slug'
+    | '/admin'
+    | '/blog'
   id:
     | '__root__'
     | '/'
@@ -109,6 +285,22 @@ export interface FileRouteTypes {
     | '/lets-grow-together'
     | '/portfolio'
     | '/services'
+    | '/admin/activity'
+    | '/admin/audits'
+    | '/admin/backlinks'
+    | '/admin/blogs'
+    | '/admin/competitors'
+    | '/admin/content'
+    | '/admin/integrations'
+    | '/admin/keywords'
+    | '/admin/login'
+    | '/admin/pages'
+    | '/admin/reports'
+    | '/admin/settings'
+    | '/admin/tasks'
+    | '/blog/$slug'
+    | '/admin/'
+    | '/blog/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -119,6 +311,22 @@ export interface RootRouteChildren {
   LetsGrowTogetherRoute: typeof LetsGrowTogetherRoute
   PortfolioRoute: typeof PortfolioRoute
   ServicesRoute: typeof ServicesRoute
+  AdminActivityRoute: typeof AdminActivityRoute
+  AdminAuditsRoute: typeof AdminAuditsRoute
+  AdminBacklinksRoute: typeof AdminBacklinksRoute
+  AdminBlogsRoute: typeof AdminBlogsRoute
+  AdminCompetitorsRoute: typeof AdminCompetitorsRoute
+  AdminContentRoute: typeof AdminContentRoute
+  AdminIntegrationsRoute: typeof AdminIntegrationsRoute
+  AdminKeywordsRoute: typeof AdminKeywordsRoute
+  AdminLoginRoute: typeof AdminLoginRoute
+  AdminPagesRoute: typeof AdminPagesRoute
+  AdminReportsRoute: typeof AdminReportsRoute
+  AdminSettingsRoute: typeof AdminSettingsRoute
+  AdminTasksRoute: typeof AdminTasksRoute
+  BlogSlugRoute: typeof BlogSlugRoute
+  AdminIndexRoute: typeof AdminIndexRoute
+  BlogIndexRoute: typeof BlogIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -172,6 +380,118 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/admin/': {
+      id: '/admin/'
+      path: '/admin'
+      fullPath: '/admin/'
+      preLoaderRoute: typeof AdminIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/activity': {
+      id: '/admin/activity'
+      path: '/admin/activity'
+      fullPath: '/admin/activity'
+      preLoaderRoute: typeof AdminActivityRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/audits': {
+      id: '/admin/audits'
+      path: '/admin/audits'
+      fullPath: '/admin/audits'
+      preLoaderRoute: typeof AdminAuditsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/backlinks': {
+      id: '/admin/backlinks'
+      path: '/admin/backlinks'
+      fullPath: '/admin/backlinks'
+      preLoaderRoute: typeof AdminBacklinksRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/blogs': {
+      id: '/admin/blogs'
+      path: '/admin/blogs'
+      fullPath: '/admin/blogs'
+      preLoaderRoute: typeof AdminBlogsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/competitors': {
+      id: '/admin/competitors'
+      path: '/admin/competitors'
+      fullPath: '/admin/competitors'
+      preLoaderRoute: typeof AdminCompetitorsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/content': {
+      id: '/admin/content'
+      path: '/admin/content'
+      fullPath: '/admin/content'
+      preLoaderRoute: typeof AdminContentRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/integrations': {
+      id: '/admin/integrations'
+      path: '/admin/integrations'
+      fullPath: '/admin/integrations'
+      preLoaderRoute: typeof AdminIntegrationsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/keywords': {
+      id: '/admin/keywords'
+      path: '/admin/keywords'
+      fullPath: '/admin/keywords'
+      preLoaderRoute: typeof AdminKeywordsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/login': {
+      id: '/admin/login'
+      path: '/admin/login'
+      fullPath: '/admin/login'
+      preLoaderRoute: typeof AdminLoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/pages': {
+      id: '/admin/pages'
+      path: '/admin/pages'
+      fullPath: '/admin/pages'
+      preLoaderRoute: typeof AdminPagesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/reports': {
+      id: '/admin/reports'
+      path: '/admin/reports'
+      fullPath: '/admin/reports'
+      preLoaderRoute: typeof AdminReportsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/settings': {
+      id: '/admin/settings'
+      path: '/admin/settings'
+      fullPath: '/admin/settings'
+      preLoaderRoute: typeof AdminSettingsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/tasks': {
+      id: '/admin/tasks'
+      path: '/admin/tasks'
+      fullPath: '/admin/tasks'
+      preLoaderRoute: typeof AdminTasksRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog/': {
+      id: '/blog/'
+      path: '/blog'
+      fullPath: '/blog/'
+      preLoaderRoute: typeof BlogIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog/$slug': {
+      id: '/blog/$slug'
+      path: '/blog/$slug'
+      fullPath: '/blog/$slug'
+      preLoaderRoute: typeof BlogSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -183,6 +503,22 @@ const rootRouteChildren: RootRouteChildren = {
   LetsGrowTogetherRoute: LetsGrowTogetherRoute,
   PortfolioRoute: PortfolioRoute,
   ServicesRoute: ServicesRoute,
+  AdminActivityRoute: AdminActivityRoute,
+  AdminAuditsRoute: AdminAuditsRoute,
+  AdminBacklinksRoute: AdminBacklinksRoute,
+  AdminBlogsRoute: AdminBlogsRoute,
+  AdminCompetitorsRoute: AdminCompetitorsRoute,
+  AdminContentRoute: AdminContentRoute,
+  AdminIntegrationsRoute: AdminIntegrationsRoute,
+  AdminKeywordsRoute: AdminKeywordsRoute,
+  AdminLoginRoute: AdminLoginRoute,
+  AdminPagesRoute: AdminPagesRoute,
+  AdminReportsRoute: AdminReportsRoute,
+  AdminSettingsRoute: AdminSettingsRoute,
+  AdminTasksRoute: AdminTasksRoute,
+  BlogSlugRoute: BlogSlugRoute,
+  AdminIndexRoute: AdminIndexRoute,
+  BlogIndexRoute: BlogIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

@@ -32,7 +32,8 @@ export function ContactForm() {
 
     const next: Errors = {};
     if (name.length < 2) next.name = "Please enter your name.";
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) next.email = "Please enter a valid email address.";
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email))
+      next.email = "Please enter a valid email address.";
     if (message.length < 10) next.message = "A sentence or two about your business helps.";
     setErrors(next);
     if (Object.keys(next).length > 0) return;
@@ -227,8 +228,7 @@ export function ContactForm() {
         {submitting ? "Sending…" : "Start a Conversation"}
       </button>
       <p className="mt-4 text-xs leading-relaxed text-muted-foreground">
-        A free first consultation is available. You can also reach us directly on WhatsApp or
-        email.
+        A free first consultation is available. You can also reach us directly on WhatsApp or email.
       </p>
     </form>
   );

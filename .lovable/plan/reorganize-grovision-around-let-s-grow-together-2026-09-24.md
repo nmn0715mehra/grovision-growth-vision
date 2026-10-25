@@ -1,6 +1,7 @@
 # Reorganize GROVISION around “Let’s Grow Together”
 
 ## Goal
+
 Change the primary journey to:
 
 ```text
@@ -10,6 +11,7 @@ Home → Let’s Grow Together → About → Services → Portfolio → Case Stu
 The existing inquiry form remains one shared component with its current Google Apps Script submission behavior unchanged.
 
 ## Route and navigation
+
 - Add the clean `/lets-grow-together` route using the current Contact page experience.
 - Replace the old `/contact` content page with a redirect to `/lets-grow-together`, preserving old bookmarks without creating a duplicate page.
 - Reorder the shared navigation to: Home, Let’s Grow Together, About, Services, Portfolio, Case Studies.
@@ -18,6 +20,7 @@ The existing inquiry form remains one shared component with its current Google A
 - Keep all other routes and existing page content accessible.
 
 ## Let’s Grow Together page
+
 - Give the page a premium inquiry-focused introduction:
   - H1: “LET’S GROW TOGETHER”
   - Supporting line: “Have a vision for your business? Let’s turn it into growth.”
@@ -28,16 +31,19 @@ The existing inquiry form remains one shared component with its current Google A
 - Keep the current reusable Contact section on existing pages so no homepage or supporting-page section is removed; all prominent inquiry links lead to the dedicated page.
 
 ## Form and integrations
+
 - Do not modify the form fields, validation, Apps Script URL, form-encoded POST request, loading state, success message, error handling, reset behavior, or Google Sheets mapping.
 - Keep email, phone, WhatsApp, social-link states, analytics scripts, and the floating WhatsApp button untouched.
 
 ## Search and production configuration
+
 - Add unique metadata for `/lets-grow-together`, including title, description, Open Graph fields, Twitter card, and canonical URL.
 - Replace `/contact` with `/lets-grow-together` in the sitemap.
 - Update the static prerender route list so the new page is emitted in the production output.
 - Let TanStack regenerate the route tree from the renamed route file; do not edit the generated file manually.
 
 ## Verification
+
 - Confirm `/`, `/lets-grow-together`, `/about`, `/services`, `/portfolio`, and `/case-studies` render and navigate correctly.
 - Confirm `/contact` redirects to `/lets-grow-together` and no internal links still target `/contact`.
 - Confirm the navbar order and both desktop/mobile inquiry CTAs.

@@ -59,7 +59,6 @@ jobs:
         with:
           path: ${{ steps.outdir.outputs.path }}
 
-
   deploy:
     environment:
       name: github-pages

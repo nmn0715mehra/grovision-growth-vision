@@ -9,6 +9,7 @@ import { CaseStudiesSection } from "@/components/sections/CaseStudiesSection";
 import { AboutSection } from "@/components/sections/AboutSection";
 import { Philosophy } from "@/components/sections/Philosophy";
 import { ContactSection } from "@/components/sections/ContactSection";
+import { BlogSection } from "@/components/sections/BlogSection";
 
 const title = "GROVISION | Digital Marketing & Growth Strategy";
 const description =
@@ -53,6 +54,7 @@ function Index() {
       <CaseStudiesSection />
       <AboutSection />
       <BrandIntro />
+      <BlogSection />
       <Philosophy />
       <WhoWeHelp />
       <Approach />

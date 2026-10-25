@@ -10,7 +10,10 @@ const beliefs = [
 
 export function Philosophy() {
   return (
-    <section id="philosophy" className="relative overflow-hidden bg-navy px-5 py-24 text-ivory sm:px-8 sm:py-28 lg:py-32">
+    <section
+      id="philosophy"
+      className="relative overflow-hidden bg-navy px-5 py-24 text-ivory sm:px-8 sm:py-28 lg:py-32"
+    >
       <div aria-hidden="true" className="absolute inset-0 opacity-25">
         <div className="spin-slow absolute -right-24 -top-24 h-80 w-80 rounded-full border border-gold/30" />
         <div className="absolute -bottom-32 -left-20 h-96 w-96 rounded-full border border-ivory/10" />

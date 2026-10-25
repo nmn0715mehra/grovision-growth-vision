@@ -32,7 +32,12 @@ const WHATSAPP_MESSAGE =
 export const whatsappHref = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
 
 export const contactChannels: ContactChannel[] = [
-  { id: "email", label: "Email", value: "nmn0715mehra@gmail.com", href: "mailto:nmn0715mehra@gmail.com" },
+  {
+    id: "email",
+    label: "Email",
+    value: "nmn0715mehra@gmail.com",
+    href: "mailto:nmn0715mehra@gmail.com",
+  },
   { id: "whatsapp", label: "WhatsApp", value: "+91 88242 01010", href: whatsappHref },
   { id: "phone", label: "Phone", value: "+91 88242 01010", href: "tel:+918824201010" },
 ];
@@ -55,6 +60,7 @@ export const navLinks = [
   { label: "Services", to: "/services", hash: undefined },
   { label: "Portfolio", to: "/portfolio", hash: undefined },
   { label: "Case Studies", to: "/case-studies", hash: undefined },
+  { label: "Blog", to: "/blog", hash: undefined },
   { label: "About", to: "/about", hash: undefined },
   { label: "Contact", to: "/contact", hash: undefined },
 ] as const;

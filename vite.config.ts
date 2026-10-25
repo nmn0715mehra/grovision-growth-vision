@@ -18,6 +18,7 @@ export default defineConfig({
       { path: "/services" },
       { path: "/portfolio" },
       { path: "/case-studies" },
+      { path: "/blog" },
       { path: "/contact" },
     ],
     prerender: { enabled: true, autoStaticPathsDiscovery: false },

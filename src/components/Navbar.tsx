@@ -37,18 +37,20 @@ export function Navbar() {
         </Link>
 
         <nav aria-label="Main" className="hidden items-center gap-7 lg:flex">
-          {navLinks.filter((link) => link.to !== "/contact").map((link) => (
-            <Link
-              key={`${link.to}${link.hash ? `#${link.hash}` : ""}`}
-              to={link.to}
-              {...(link.hash ? { hash: link.hash } : {})}
-              activeOptions={{ exact: link.to === "/", includeHash: link.to === "/" }}
-              className="text-sm font-medium text-navy/75 transition-colors hover:text-navy"
-              activeProps={{ className: "!text-navy font-semibold" }}
-            >
-              {link.label}
-            </Link>
-          ))}
+          {navLinks
+            .filter((link) => link.to !== "/contact")
+            .map((link) => (
+              <Link
+                key={`${link.to}${link.hash ? `#${link.hash}` : ""}`}
+                to={link.to}
+                {...(link.hash ? { hash: link.hash } : {})}
+                activeOptions={{ exact: link.to === "/", includeHash: link.to === "/" }}
+                className="text-sm font-medium text-navy/75 transition-colors hover:text-navy"
+                activeProps={{ className: "!text-navy font-semibold" }}
+              >
+                {link.label}
+              </Link>
+            ))}
           <Link
             to="/contact"
             className="border border-navy bg-navy px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.14em] text-ivory transition-all duration-300 hover:-translate-y-0.5 hover:bg-navy-soft hover:shadow-card"
@@ -65,7 +67,11 @@ export function Navbar() {
           aria-label={open ? "Close menu" : "Open menu"}
           className="inline-flex h-10 w-10 cursor-pointer items-center justify-center border border-border text-navy transition-colors hover:border-gold lg:hidden"
         >
-          {open ? <X aria-hidden="true" className="h-5 w-5" /> : <Menu aria-hidden="true" className="h-5 w-5" />}
+          {open ? (
+            <X aria-hidden="true" className="h-5 w-5" />
+          ) : (
+            <Menu aria-hidden="true" className="h-5 w-5" />
+          )}
         </button>
       </div>
 
@@ -75,18 +81,20 @@ export function Navbar() {
         className="border-t border-border bg-ivory px-5 pb-6 pt-2 sm:px-8 lg:hidden"
       >
         <nav aria-label="Mobile" className="flex flex-col">
-          {navLinks.filter((link) => link.to !== "/contact").map((link) => (
-            <Link
-              key={`${link.to}${link.hash ? `#${link.hash}` : ""}`}
-              to={link.to}
-              {...(link.hash ? { hash: link.hash } : {})}
-              activeOptions={{ exact: link.to === "/", includeHash: link.to === "/" }}
-              className="border-b border-border py-3.5 text-base font-medium text-navy/80"
-              activeProps={{ className: "!text-navy font-semibold" }}
-            >
-              {link.label}
-            </Link>
-          ))}
+          {navLinks
+            .filter((link) => link.to !== "/contact")
+            .map((link) => (
+              <Link
+                key={`${link.to}${link.hash ? `#${link.hash}` : ""}`}
+                to={link.to}
+                {...(link.hash ? { hash: link.hash } : {})}
+                activeOptions={{ exact: link.to === "/", includeHash: link.to === "/" }}
+                className="border-b border-border py-3.5 text-base font-medium text-navy/80"
+                activeProps={{ className: "!text-navy font-semibold" }}
+              >
+                {link.label}
+              </Link>
+            ))}
           <Link
             to="/contact"
             className="mt-5 border border-navy bg-navy px-5 py-3.5 text-center text-xs font-semibold uppercase tracking-[0.14em] text-ivory"

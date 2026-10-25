@@ -46,10 +46,15 @@ function ContactPage() {
                 return (
                   <li key={channel.id} className="bg-ivory">
                     {channel.href ? (
-                      <a href={channel.href} className="flex items-center gap-4 p-5 text-navy transition-colors hover:text-gold">
+                      <a
+                        href={channel.href}
+                        className="flex items-center gap-4 p-5 text-navy transition-colors hover:text-gold"
+                      >
                         <Icon aria-hidden="true" className="h-5 w-5 shrink-0 text-gold" />
                         <span>
-                          <span className="eyebrow block text-muted-foreground">{channel.label}</span>
+                          <span className="eyebrow block text-muted-foreground">
+                            {channel.label}
+                          </span>
                           <span className="mt-1 block font-medium">{channel.value}</span>
                         </span>
                       </a>
@@ -91,11 +96,21 @@ function ContactPage() {
                   return (
                     <li key={social.id}>
                       {social.url ? (
-                        <a href={social.url} target="_blank" rel="noreferrer noopener" aria-label={`GROVISION on ${social.label}`} className="inline-flex h-11 w-11 items-center justify-center border border-navy/20 text-navy transition-colors hover:border-gold hover:text-gold">
+                        <a
+                          href={social.url}
+                          target="_blank"
+                          rel="noreferrer noopener"
+                          aria-label={`GROVISION on ${social.label}`}
+                          className="inline-flex h-11 w-11 items-center justify-center border border-navy/20 text-navy transition-colors hover:border-gold hover:text-gold"
+                        >
                           <Icon aria-hidden="true" className="h-4 w-4" />
                         </a>
                       ) : (
-                        <span aria-label={`${social.label} account coming soon`} title={`${social.label} — account coming soon`} className="inline-flex h-11 w-11 items-center justify-center border border-dashed border-navy/20 text-navy/35">
+                        <span
+                          aria-label={`${social.label} account coming soon`}
+                          title={`${social.label} — account coming soon`}
+                          className="inline-flex h-11 w-11 items-center justify-center border border-dashed border-navy/20 text-navy/35"
+                        >
                           <Icon aria-hidden="true" className="h-4 w-4" />
                         </span>
                       )}
@@ -104,7 +119,8 @@ function ContactPage() {
                 })}
               </ul>
               <p className="mt-4 text-xs leading-relaxed text-muted-foreground">
-                Official GROVISION social accounts are not live yet, so nothing here links anywhere unverified.
+                Official GROVISION social accounts are not live yet, so nothing here links anywhere
+                unverified.
               </p>
             </div>
           </Reveal>
