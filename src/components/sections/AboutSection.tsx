@@ -3,7 +3,7 @@ import { Reveal } from "../Reveal";
 
 export function AboutSection({ heading = "h2" }: { heading?: "h1" | "h2" }) {
   return (
-    <Section id="about" tone="ivory">
+    <Section id="about" tone="beige">
       <div className="grid gap-12 lg:grid-cols-[1fr_1fr] lg:gap-20">
         <SectionHeading
           as={heading}

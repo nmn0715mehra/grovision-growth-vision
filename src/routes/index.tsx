@@ -52,9 +52,9 @@ function Index() {
       <ServicesSection />
       <PortfolioSection />
       <CaseStudiesSection />
+      <BlogSection />
       <AboutSection />
       <BrandIntro />
-      <BlogSection />
       <Philosophy />
       <WhoWeHelp />
       <Approach />
