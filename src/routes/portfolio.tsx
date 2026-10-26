@@ -2,9 +2,9 @@ import { createFileRoute } from "@tanstack/react-router";
 import { PortfolioSection } from "@/components/sections/PortfolioSection";
 import { CaseStudiesSection } from "@/components/sections/CaseStudiesSection";
 
-const title = "Portfolio | Concept & Sample Work — GROVISION";
+const title = "Portfolio | Creative & Growth Campaigns | GROVISION";
 const description =
-  "Self-initiated concept and sample work from GROVISION across brand strategy, social media, SEO, paid media and growth — clearly labelled, never presented as client work.";
+  "Explore GROVISION portfolio samples across brand strategy, SEO campaigns, social media, and paid advertising designed for scalable business growth.";
 
 export const Route = createFileRoute("/portfolio")({
   head: () => ({

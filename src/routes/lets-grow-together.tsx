@@ -2,7 +2,7 @@ import { createFileRoute, redirect } from "@tanstack/react-router";
 
 const title = "Let's Grow Together | GROVISION Growth Consultation";
 const description =
-  "Share your business, goals and requirements with GROVISION and start a free first conversation about digital marketing and growth.";
+  "Share your business goals with GROVISION to start a free strategic conversation about SEO, paid advertising, and high-impact digital growth.";
 
 export const Route = createFileRoute("/lets-grow-together")({
   head: () => ({

@@ -5,9 +5,9 @@ import { BrandIntro } from "@/components/sections/BrandIntro";
 import { Approach } from "@/components/sections/Approach";
 import { ContactSection } from "@/components/sections/ContactSection";
 
-const title = "About GROVISION | An Emerging Digital Marketing Brand";
+const title = "About GROVISION | Strategic Digital Marketing Brand";
 const description =
-  "GROVISION is an emerging Indian digital marketing brand built on strategy before execution — honest about its current stage, serious about its standards.";
+  "Learn about GROVISION: an emerging digital marketing brand built on strategy before execution, dedicated to transparent, measurable client growth.";
 
 export const Route = createFileRoute("/about")({
   head: () => ({

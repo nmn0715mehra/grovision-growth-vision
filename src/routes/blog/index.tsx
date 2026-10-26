@@ -12,7 +12,7 @@ export const Route = createFileRoute("/blog/")({
       {
         name: "description",
         content:
-          "Strategic thinking on search engine optimization, brand positioning, performance media, and scalable digital direction from GROVISION.",
+          "Strategic insights on SEO, brand positioning, performance media, and digital growth strategies for founders and marketing leaders from GROVISION.",
       },
       { property: "og:title", content: "The GROVISION Journal | Growth & SEO Insights" },
       {

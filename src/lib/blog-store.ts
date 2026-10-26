@@ -686,3 +686,21 @@ export function useBlogStore() {
     getPublishedBlogs,
   };
 }
+
+export { initialBlogs };
+
+export function getStaticBlogBySlug(slug: string): BlogPost | undefined {
+  if (typeof window !== "undefined") {
+    try {
+      const stored = localStorage.getItem(KEY_BLOGS);
+      if (stored) {
+        const parsed = JSON.parse(stored) as BlogPost[];
+        const found = parsed.find((b) => b.slug === slug);
+        if (found) return found;
+      }
+    } catch {
+      // ignore
+    }
+  }
+  return initialBlogs.find((b) => b.slug === slug);
+}

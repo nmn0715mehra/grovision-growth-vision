@@ -228,8 +228,12 @@ ${checklistBlock}
 
 ${ctaBlock}`;
 
-  const metaTitle = `${topic.length > 50 ? topic.substring(0, 47) + "..." : topic} | GROVISION`;
-  const metaDescription = `Discover strategic insights on ${topic.toLowerCase()}. Learn how GROVISION helps ambitious brands build clarity and scale profitably online.`;
+  const safeTopic = topic.length > 46 ? topic.substring(0, 43).trim() + "..." : topic;
+  const metaTitle = `${safeTopic} | GROVISION`;
+  let metaDescription = `Discover strategic insights on ${topic.toLowerCase()}. Learn how GROVISION helps ambitious brands build clarity and scale profitably online.`;
+  if (metaDescription.length > 160) {
+    metaDescription = `${metaDescription.substring(0, 157).trim()}...`;
+  }
 
   return {
     title: topic,

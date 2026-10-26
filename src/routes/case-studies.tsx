@@ -2,9 +2,9 @@ import { createFileRoute } from "@tanstack/react-router";
 import { CaseStudiesSection } from "@/components/sections/CaseStudiesSection";
 import { PortfolioSection } from "@/components/sections/PortfolioSection";
 
-const title = "Case Studies | Coming Soon — GROVISION";
+const title = "Case Studies | Digital Marketing Results | GROVISION";
 const description =
-  "As GROVISION grows, this space will showcase real strategies, challenges, solutions and measurable outcomes — challenge, objective, strategy, execution, results and learnings.";
+  "In-depth digital marketing case studies from GROVISION. See our strategies, execution frameworks, and measurable outcomes for business growth.";
 
 export const Route = createFileRoute("/case-studies")({
   head: () => ({

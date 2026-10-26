@@ -1542,22 +1542,22 @@ export function BlogAdminPage() {
                   <span className="font-semibold text-navy">Pre-flight checks:</span>
                   <Badge
                     className={`text-[10px] ${
-                      title.length > 20 && title.length <= 65
+                      title.length > 20 && title.length <= 60
                         ? "bg-emerald-100 text-emerald-800"
                         : "bg-amber-100 text-amber-800"
                     }`}
                   >
-                    Title {title.length > 20 && title.length <= 65 ? "✓ Optimal" : "Check length"}
+                    Title {title.length > 20 && title.length <= 60 ? "✓ Optimal" : "Check length"}
                   </Badge>
                   <Badge
                     className={`text-[10px] ${
-                      metaDescription.length >= 80 && metaDescription.length <= 165
+                      metaDescription.length >= 80 && metaDescription.length <= 160
                         ? "bg-emerald-100 text-emerald-800"
                         : "bg-amber-100 text-amber-800"
                     }`}
                   >
                     Meta Desc{" "}
-                    {metaDescription.length >= 80 && metaDescription.length <= 165
+                    {metaDescription.length >= 80 && metaDescription.length <= 160
                       ? "✓ Optimal"
                       : "Check length"}
                   </Badge>

@@ -4,9 +4,9 @@ import { Section, SectionHeading } from "@/components/SectionHeading";
 import { Reveal } from "@/components/Reveal";
 import { contactChannels, socialLinks } from "@/lib/site";
 
-const title = "Contact GROVISION | Email, WhatsApp & Phone";
+const title = "Contact GROVISION | Start Your Growth Consultation";
 const description =
-  "Get in touch with GROVISION directly by email, WhatsApp or phone, or share your goals through our growth consultation inquiry page.";
+  "Contact GROVISION directly via email, WhatsApp, or phone. Discuss your digital marketing goals and request a strategic growth consultation today.";
 
 const channelIcons = { email: Mail, whatsapp: MessageCircle, phone: Phone } as const;
 const socialIcons = { instagram: Instagram, linkedin: Linkedin } as const;

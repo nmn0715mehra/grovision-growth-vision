@@ -246,7 +246,7 @@ const initialPages: MonitoredPage[] = [
     wordCount: 1420,
     lastCrawled: "2026-10-22",
     metaDescription:
-      "GROVISION is a creative and strategic digital marketing brand helping ambitious businesses find clear direction and grow online through strategy, SEO, social media and paid advertising.",
+      "GROVISION is a strategic digital marketing brand helping ambitious businesses scale online with data-driven SEO, paid media, and growth strategy.",
     h1: "WHERE VISION MEETS GROWTH",
   },
   {
@@ -261,13 +261,13 @@ const initialPages: MonitoredPage[] = [
     wordCount: 650,
     lastCrawled: "2026-10-22",
     metaDescription:
-      "Share your business, goals and requirements with GROVISION and start a free first conversation about digital marketing and growth.",
+      "Share your business goals with GROVISION to start a free strategic conversation about SEO, paid advertising, and high-impact digital growth.",
     h1: "LET'S GROW TOGETHER",
   },
   {
     id: "p-3",
     url: "/services",
-    title: "Services | GROVISION Strategic Digital Marketing",
+    title: "Digital Marketing Services & SEO Strategy | GROVISION",
     httpStatus: 200,
     indexStatus: "Indexed",
     canonicalUrl: "https://grovision.shop/services",
@@ -276,13 +276,13 @@ const initialPages: MonitoredPage[] = [
     wordCount: 980,
     lastCrawled: "2026-10-21",
     metaDescription:
-      "Strategic digital marketing services including SEO, PPC advertising, brand strategy, and social growth.",
+      "Strategic digital marketing services by GROVISION: SEO, paid ads, brand positioning, and social media management tied directly to your business goals.",
     h1: "STRATEGIC SERVICES",
   },
   {
     id: "p-4",
     url: "/portfolio",
-    title: "Portfolio | GROVISION Client Work & Campaigns",
+    title: "Portfolio | Creative & Growth Campaigns | GROVISION",
     httpStatus: 200,
     indexStatus: "Indexed",
     canonicalUrl: "https://grovision.shop/portfolio",
@@ -291,13 +291,13 @@ const initialPages: MonitoredPage[] = [
     wordCount: 820,
     lastCrawled: "2026-10-21",
     metaDescription:
-      "Explore GROVISION client campaigns across SEO, branding, and performance growth.",
+      "Explore GROVISION portfolio samples across brand strategy, SEO campaigns, social media, and paid advertising designed for scalable business growth.",
     h1: "FEATURED WORK",
   },
   {
     id: "p-5",
     url: "/case-studies",
-    title: "Case Studies | GROVISION Proven Results",
+    title: "Case Studies | Digital Marketing Results | GROVISION",
     httpStatus: 200,
     indexStatus: "Indexed",
     canonicalUrl: "https://grovision.shop/case-studies",
@@ -306,13 +306,13 @@ const initialPages: MonitoredPage[] = [
     wordCount: 1100,
     lastCrawled: "2026-10-21",
     metaDescription:
-      "In-depth case studies demonstrating measurable client revenue and audience expansion.",
+      "In-depth digital marketing case studies from GROVISION. See our strategies, execution frameworks, and measurable outcomes for business growth.",
     h1: "PROVEN IMPACT",
   },
   {
     id: "p-6",
     url: "/about",
-    title: "About GROVISION | Agency Story & Vision",
+    title: "About GROVISION | Strategic Digital Marketing Brand",
     httpStatus: 200,
     indexStatus: "Indexed",
     canonicalUrl: "https://grovision.shop/about",
@@ -321,13 +321,13 @@ const initialPages: MonitoredPage[] = [
     wordCount: 890,
     lastCrawled: "2026-10-20",
     metaDescription:
-      "Learn about GROVISION's ethos, founders, and commitment to measurable business transformation.",
+      "Learn about GROVISION: an emerging digital marketing brand built on strategy before execution, dedicated to transparent, measurable client growth.",
     h1: "OUR STORY",
   },
   {
     id: "p-7",
     url: "/contact",
-    title: "Contact GROVISION | Email, WhatsApp & Phone",
+    title: "Contact GROVISION | Start Your Growth Consultation",
     httpStatus: 200,
     indexStatus: "Indexed",
     canonicalUrl: "https://grovision.shop/contact",
@@ -335,8 +335,24 @@ const initialPages: MonitoredPage[] = [
     primaryKeyword: "contact grovision digital marketing",
     wordCount: 450,
     lastCrawled: "2026-10-20",
-    metaDescription: "Get in touch with GROVISION directly by email, WhatsApp or phone.",
+    metaDescription:
+      "Contact GROVISION directly via email, WhatsApp, or phone. Discuss your digital marketing goals and request a strategic growth consultation today.",
     h1: "GET IN TOUCH",
+  },
+  {
+    id: "p-8",
+    url: "/blog",
+    title: "The GROVISION Journal | SEO, Brand & Growth Insights",
+    httpStatus: 200,
+    indexStatus: "Indexed",
+    canonicalUrl: "https://grovision.shop/blog",
+    healthScore: 97,
+    primaryKeyword: "growth and seo insights",
+    wordCount: 1600,
+    lastCrawled: "2026-10-23",
+    metaDescription:
+      "Strategic insights on SEO, brand positioning, performance media, and digital growth strategies for founders and marketing leaders from GROVISION.",
+    h1: "THE GROVISION JOURNAL",
   },
 ];
 
@@ -625,7 +641,7 @@ const initialAuthUser: AdminUser = {
 };
 
 // Storage keys
-const STORAGE_PREFIX = "grovision_seo_admin_";
+const STORAGE_PREFIX = "grovision_seo_admin_v2_";
 const KEY_SETTINGS = `${STORAGE_PREFIX}settings`;
 const KEY_KEYWORDS = `${STORAGE_PREFIX}keywords`;
 const KEY_PAGES = `${STORAGE_PREFIX}pages`;
@@ -665,9 +681,21 @@ export function useAdminStore() {
   const [keywords, setKeywordsState] = useState<Keyword[]>(() =>
     getStored(KEY_KEYWORDS, initialKeywords),
   );
-  const [pages, setPagesState] = useState<MonitoredPage[]>(() =>
-    getStored(KEY_PAGES, initialPages),
-  );
+  const [pages, setPagesState] = useState<MonitoredPage[]>(() => {
+    const stored = getStored(KEY_PAGES, initialPages);
+    // Ensure monitored pages always adhere to updated < 60 title and < 160 description
+    return stored.map((p) => {
+      const match = initialPages.find((ip) => ip.url === p.url);
+      if (match && (p.metaDescription.length > 160 || p.title.length > 60 || p.metaDescription.includes("creative and strategic digital marketing brand"))) {
+        return {
+          ...p,
+          title: match.title,
+          metaDescription: match.metaDescription,
+        };
+      }
+      return p;
+    });
+  });
   const [issues, setIssuesState] = useState<TechnicalIssue[]>(() =>
     getStored(KEY_ISSUES, initialIssues),
   );

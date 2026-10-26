@@ -13,7 +13,7 @@ import { BlogSection } from "@/components/sections/BlogSection";
 
 const title = "GROVISION | Digital Marketing & Growth Strategy";
 const description =
-  "GROVISION is a creative and strategic digital marketing brand helping ambitious businesses find clear direction and grow online through strategy, SEO, social media and paid advertising.";
+  "GROVISION is a strategic digital marketing brand helping ambitious businesses scale online with data-driven SEO, paid media, and growth strategy.";
 
 export const Route = createFileRoute("/")({
   head: () => ({

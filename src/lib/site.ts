@@ -10,7 +10,7 @@ export const brand = {
   name: "GROVISION",
   tagline: "WHERE VISION MEETS GROWTH.",
   description:
-    "GROVISION is a creative and strategic digital marketing brand helping ambitious businesses find clear direction and grow online.",
+    "GROVISION is a strategic digital marketing brand helping ambitious businesses scale online with data-driven SEO, paid media, and growth strategy.",
 } as const;
 
 export type ContactChannel = {

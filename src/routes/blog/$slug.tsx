@@ -1,5 +1,5 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { useBlogStore, type BlogPost } from "@/lib/blog-store";
+import { useBlogStore, getStaticBlogBySlug, type BlogPost } from "@/lib/blog-store";
 import { MarkdownRenderer } from "@/components/blog/MarkdownRenderer";
 import {
   Clock,
@@ -20,15 +20,33 @@ import { toast } from "sonner";
 
 export const Route = createFileRoute("/blog/$slug")({
   head: ({ params }) => {
-    // Dynamic head tags
+    const blog = getStaticBlogBySlug(params.slug);
+    let title = blog?.seo.metaTitle || blog?.title || `GROVISION Insights | ${params.slug}`;
+    if (title.length > 60) {
+      title = `${title.substring(0, 57).trim()}...`;
+    }
+
+    let description =
+      blog?.seo.metaDescription ||
+      blog?.excerpt ||
+      "Strategic digital marketing, SEO, and brand growth insights from GROVISION.";
+    if (description.length > 160) {
+      description = `${description.substring(0, 157).trim()}...`;
+    }
+
     return {
       meta: [
-        { title: `GROVISION Insights | ${params.slug}` },
+        { title },
+        { name: "description", content: description },
+        { property: "og:title", content: title },
+        { property: "og:description", content: description },
+        { property: "og:type", content: "article" },
         {
           name: "robots",
           content: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
         },
       ],
+      links: [{ rel: "canonical", href: `/blog/${params.slug}` }],
     };
   },
   component: BlogPostDetailPage,
