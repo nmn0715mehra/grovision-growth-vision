@@ -55,6 +55,32 @@ export function BrandIntro() {
           ))}
         </div>
       </div>
+
+      <Reveal delay={160} className="mt-14 sm:mt-16">
+        <div className="group overflow-hidden rounded-xl border border-border bg-white shadow-card transition-all duration-300 hover:border-gold hover:shadow-lift">
+          <div className="border-b border-border/80 bg-navy px-5 py-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 text-ivory">
+            <div>
+              <span className="eyebrow text-gold text-[10px]">Strategic Framework</span>
+              <h3 className="text-sm sm:text-base font-bold text-ivory">The Full-Funnel Growth Architecture</h3>
+            </div>
+            <span className="self-start sm:self-auto rounded bg-white/10 px-2.5 py-1 text-[11px] font-mono text-ivory/80 border border-white/10">
+              Positioning • Intent SEO • Performance • Scale
+            </span>
+          </div>
+          <div className="relative aspect-[16/9] w-full bg-navy/5 overflow-hidden">
+            <img
+              src="/images/site/growth-framework-infographic.jpg"
+              alt="GROVISION Growth Architecture Infographic"
+              loading="lazy"
+              className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.02]"
+            />
+          </div>
+          <div className="border-t border-border bg-ivory/60 px-5 py-3.5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 text-xs text-muted-foreground">
+            <span>A systematic direction connecting market positioning to compounding commercial revenue.</span>
+            <span className="font-semibold text-navy shrink-0">Built for Scalable Execution</span>
+          </div>
+        </div>
+      </Reveal>
     </Section>
   );
 }
