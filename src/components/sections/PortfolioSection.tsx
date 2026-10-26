@@ -21,6 +21,7 @@ export function PortfolioSection({ heading = "h2" }: { heading?: "h1" | "h2" }) 
               discipline={item.discipline}
               focus={item.focus}
               scope={item.scope}
+              image={item.image}
             />
           </Reveal>
         ))}

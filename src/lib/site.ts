@@ -170,6 +170,7 @@ export type PortfolioItem = {
   discipline: string;
   focus: string;
   scope: string[];
+  image: string;
 };
 
 export const portfolioItems: PortfolioItem[] = [
@@ -181,6 +182,7 @@ export const portfolioItems: PortfolioItem[] = [
     focus:
       "A self-directed exercise in positioning a product-led brand: audience definition, messaging pillars and tone of voice.",
     scope: ["Positioning", "Messaging", "Tone of voice"],
+    image: "/images/portfolio/brand-strategy.jpg",
   },
   {
     id: "social-media-campaign-concept",
@@ -190,6 +192,7 @@ export const portfolioItems: PortfolioItem[] = [
     focus:
       "A campaign idea developed end to end — objective, content pillars, formats and a four-week posting structure.",
     scope: ["Campaign idea", "Content pillars", "Calendar"],
+    image: "/images/portfolio/social-media.jpg",
   },
   {
     id: "seo-strategy-concept",
@@ -199,6 +202,7 @@ export const portfolioItems: PortfolioItem[] = [
     focus:
       "A practice search strategy covering intent mapping, page structure and a content plan for a local service business.",
     scope: ["Intent mapping", "Site structure", "Content plan"],
+    image: "/images/portfolio/seo-strategy.jpg",
   },
   {
     id: "paid-advertising-concept",
@@ -208,6 +212,7 @@ export const portfolioItems: PortfolioItem[] = [
     focus:
       "A hypothetical campaign framework: objectives, audience segments, creative angles and a measurement approach.",
     scope: ["Objectives", "Audience segments", "Creative angles"],
+    image: "/images/portfolio/paid-advertising.jpg",
   },
   {
     id: "digital-growth-strategy-concept",
@@ -217,6 +222,7 @@ export const portfolioItems: PortfolioItem[] = [
     focus:
       "A full-funnel direction exercise connecting awareness, consideration and conversion for an emerging brand.",
     scope: ["Funnel mapping", "Channel priorities", "Measurement"],
+    image: "/images/portfolio/growth-strategy.jpg",
   },
 ];
 

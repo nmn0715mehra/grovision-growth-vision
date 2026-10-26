@@ -83,30 +83,51 @@ export function PortfolioCard({
   discipline,
   focus,
   scope,
+  image,
 }: {
   title: string;
   label: string;
   discipline: string;
   focus: string;
   scope: readonly string[];
+  image?: string;
 }) {
   return (
-    <article className="group flex h-full flex-col border border-border bg-card shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-lift">
-      <div
-        aria-hidden="true"
-        className="grid-lines relative flex h-40 items-end overflow-hidden border-b border-border bg-beige p-5 sm:h-48"
-      >
-        <span className="absolute -right-8 -top-10 h-32 w-32 rounded-full border border-gold/40" />
-        <span className="absolute right-6 top-8 h-16 w-16 rounded-full border border-navy/15" />
-        <span className="text-4xl font-bold tracking-tight text-navy/15 sm:text-5xl">
-          {discipline}
-        </span>
+    <article className="group flex h-full flex-col overflow-hidden border border-border bg-card shadow-card transition-all duration-300 hover:-translate-y-1 hover:border-gold hover:shadow-lift">
+      <div className="relative h-48 sm:h-52 w-full overflow-hidden border-b border-border bg-beige/40">
+        {image ? (
+          <>
+            <img
+              src={image}
+              alt={`${title} - ${discipline}`}
+              loading="lazy"
+              className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-navy/60 via-navy/10 to-transparent" />
+            <span className="absolute bottom-3 left-4 inline-flex items-center rounded-sm bg-navy/80 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wider text-white backdrop-blur-md border border-white/10">
+              {discipline}
+            </span>
+          </>
+        ) : (
+          <div
+            aria-hidden="true"
+            className="grid-lines relative flex h-full w-full items-end p-5"
+          >
+            <span className="absolute -right-8 -top-10 h-32 w-32 rounded-full border border-gold/40" />
+            <span className="absolute right-6 top-8 h-16 w-16 rounded-full border border-navy/15" />
+            <span className="text-4xl font-bold tracking-tight text-navy/15 sm:text-5xl">
+              {discipline}
+            </span>
+          </div>
+        )}
       </div>
       <div className="flex flex-1 flex-col p-6 sm:p-7">
         <span className="eyebrow inline-flex w-fit border border-gold/50 px-2.5 py-1 text-gold">
           {label}
         </span>
-        <h3 className="mt-4 text-lg font-bold sm:text-xl">{title}</h3>
+        <h3 className="mt-4 text-lg font-bold sm:text-xl text-navy transition-colors group-hover:text-gold">
+          {title}
+        </h3>
         <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{focus}</p>
         <ul className="mt-5 flex flex-wrap gap-2 pt-1">
           {scope.map((item) => (
