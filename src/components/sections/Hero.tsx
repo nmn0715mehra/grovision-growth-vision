@@ -44,17 +44,24 @@ function StrategicGrowthCard() {
       />
 
       <div className="relative overflow-hidden rounded-xl border border-border/80 bg-white shadow-card transition-all duration-300 hover:border-gold/50 hover:shadow-lift">
-        {/* Card Header */}
-        <div className="border-b border-border/60 bg-ivory/70 px-4 py-3 sm:px-5 sm:py-3.5 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <span className="flex h-2 w-2 rounded-full bg-gold animate-pulse" />
-            <span className="text-[11px] font-semibold uppercase tracking-widest text-navy/85">
+        {/* Visual Hero Header */}
+        <div className="relative h-44 sm:h-52 w-full overflow-hidden border-b border-border/80 bg-navy/5">
+          <img
+            src="/images/site/hero-strategic-growth.jpg"
+            alt="Strategic digital growth and brand positioning"
+            loading="eager"
+            className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-navy/70 via-navy/20 to-transparent" />
+          <div className="absolute bottom-3 left-4 right-4 flex items-center justify-between text-white">
+            <span className="inline-flex items-center gap-1.5 rounded bg-navy/85 px-2.5 py-1 text-[11px] font-semibold tracking-wider text-ivory border border-white/10 backdrop-blur-md">
+              <span className="h-2 w-2 rounded-full bg-gold animate-pulse" />
               The GROVISION Framework
             </span>
+            <span className="rounded bg-black/40 px-2 py-0.5 text-[10px] font-mono text-gold border border-gold/30 backdrop-blur-md">
+              Full-Funnel Direction
+            </span>
           </div>
-          <span className="rounded border border-navy/10 bg-white px-2 py-0.5 text-[10px] font-mono font-medium text-navy/70">
-            Full-Funnel Direction
-          </span>
         </div>
 
         {/* 4 Pillars List */}
