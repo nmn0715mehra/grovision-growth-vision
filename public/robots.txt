@@ -1,8 +1,8 @@
 # GROVISION (https://grovision.shop)
-# Robots Exclusion File for Search Engines, Social Media Crawlers, and AI Discovery Agents (GEO)
+# Robots Exclusion Protocol for Search Engines, Social Media Crawlers, and AI Discovery Agents (GEO)
 
 # ==============================================================================
-# DEFAULT DIRECTIVES (Applies to all compliant crawlers)
+# DEFAULT DIRECTIVES (Applies to all standard compliant crawlers)
 # ==============================================================================
 User-agent: *
 Allow: /
@@ -16,16 +16,19 @@ Allow: /contact
 Allow: /images/
 Allow: /brand/
 Allow: /assets/
-Allow: /*.css$
-Allow: /*.js$
-Allow: /*.png$
-Allow: /*.jpg$
-Allow: /*.jpeg$
-Allow: /*.webp$
-Allow: /*.svg$
-Allow: /*.ico$
+Allow: /*.css
+Allow: /*.js
+Allow: /*.png
+Allow: /*.jpg
+Allow: /*.jpeg
+Allow: /*.webp
+Allow: /*.svg
+Allow: /*.ico
+Allow: /*.woff
+Allow: /*.woff2
+Allow: /*.ttf
 
-# --- Disallowed: Private Admin Portal & Management Tools ---
+# --- Disallowed: Private Admin Command Center & Management Tools ---
 Disallow: /admin
 Disallow: /admin/
 Disallow: /admin/*
@@ -40,7 +43,7 @@ Disallow: /lets-grow-together
 Disallow: /lets-grow-together/
 Disallow: /lets-grow-together/*
 
-# --- Disallowed: Drafts, Previews & Staging ---
+# --- Disallowed: Drafts, Previews & Staging Content ---
 Disallow: /draft
 Disallow: /draft/
 Disallow: /drafts/
@@ -69,8 +72,10 @@ Allow: /
 Allow: /images/
 Allow: /brand/
 Allow: /assets/
-Allow: /*.css$
-Allow: /*.js$
+Allow: /*.css
+Allow: /*.js
+Allow: /*.woff
+Allow: /*.woff2
 Disallow: /admin
 Disallow: /admin/
 Disallow: /admin/*
@@ -82,10 +87,13 @@ Disallow: /lets-grow-together/
 Disallow: /lets-grow-together/*
 Disallow: /draft
 Disallow: /draft/
+Disallow: /drafts/
 Disallow: /preview
 Disallow: /preview/
+Disallow: /staging/
 Disallow: /404
 Disallow: /500
+Disallow: /error
 Disallow: /*?*search=*
 Disallow: /*?*q=*
 Disallow: /*?*filter=*
@@ -100,14 +108,17 @@ Allow: /assets/
 Allow: /
 Disallow: /admin
 Disallow: /admin/
+Disallow: /admin/*
 
 User-agent: Bingbot
 Allow: /
 Allow: /images/
 Allow: /brand/
 Allow: /assets/
-Allow: /*.css$
-Allow: /*.js$
+Allow: /*.css
+Allow: /*.js
+Allow: /*.woff
+Allow: /*.woff2
 Disallow: /admin
 Disallow: /admin/
 Disallow: /admin/*
@@ -119,10 +130,13 @@ Disallow: /lets-grow-together/
 Disallow: /lets-grow-together/*
 Disallow: /draft
 Disallow: /draft/
+Disallow: /drafts/
 Disallow: /preview
 Disallow: /preview/
+Disallow: /staging/
 Disallow: /404
 Disallow: /500
+Disallow: /error
 Disallow: /*?*search=*
 Disallow: /*?*q=*
 Disallow: /*?*filter=*
@@ -135,6 +149,8 @@ Allow: /
 Allow: /images/
 Allow: /brand/
 Allow: /assets/
+Allow: /*.css
+Allow: /*.js
 Disallow: /admin
 Disallow: /admin/
 Disallow: /admin/*
@@ -143,12 +159,22 @@ Disallow: /api/
 Disallow: /api/*
 Disallow: /lets-grow-together
 Disallow: /lets-grow-together/
+Disallow: /lets-grow-together/*
 Disallow: /draft
 Disallow: /draft/
+Disallow: /drafts/
 Disallow: /preview
 Disallow: /preview/
+Disallow: /staging/
 Disallow: /404
 Disallow: /500
+Disallow: /error
+Disallow: /*?*search=*
+Disallow: /*?*q=*
+Disallow: /*?*filter=*
+Disallow: /*?*preview=*
+Disallow: /*?*utm_*
+Disallow: /*?*fbclid=*
 
 User-agent: DuckDuckBot
 Allow: /
@@ -160,6 +186,12 @@ Disallow: /api/
 Disallow: /api/*
 Disallow: /lets-grow-together
 Disallow: /lets-grow-together/
+Disallow: /lets-grow-together/*
+Disallow: /draft
+Disallow: /draft/
+Disallow: /preview
+Disallow: /404
+Disallow: /500
 
 # ==============================================================================
 # SOCIAL MEDIA PREVIEW CRAWLERS (Rich link previews for shared content)
@@ -168,35 +200,40 @@ User-agent: Twitterbot
 Allow: /
 Disallow: /admin
 Disallow: /admin/
+Disallow: /admin/*
 Disallow: /api/
 
 User-agent: facebookexternalhit
 Allow: /
 Disallow: /admin
 Disallow: /admin/
+Disallow: /admin/*
 Disallow: /api/
 
 User-agent: LinkedInBot
 Allow: /
 Disallow: /admin
 Disallow: /admin/
+Disallow: /admin/*
 Disallow: /api/
 
 User-agent: WhatsApp
 Allow: /
 Disallow: /admin
 Disallow: /admin/
+Disallow: /admin/*
 Disallow: /api/
 
 User-agent: Slackbot
 Allow: /
 Disallow: /admin
 Disallow: /admin/
+Disallow: /admin/*
 Disallow: /api/
 
 # ==============================================================================
 # AI SEARCH & RETRIEVAL AGENTS (GEO - Generative Engine Optimization)
-# Permitted on public knowledge/articles, blocked from private tools and redirects
+# Allowed on public thought leadership & brand content, blocked from private tools
 # ==============================================================================
 User-agent: GPTBot
 Allow: /
@@ -208,10 +245,15 @@ Disallow: /api/
 Disallow: /api/*
 Disallow: /lets-grow-together
 Disallow: /lets-grow-together/
+Disallow: /lets-grow-together/*
 Disallow: /draft
 Disallow: /draft/
+Disallow: /drafts/
 Disallow: /preview
 Disallow: /preview/
+Disallow: /staging/
+Disallow: /404
+Disallow: /500
 
 User-agent: ChatGPT-User
 Allow: /
@@ -223,6 +265,13 @@ Disallow: /api/
 Disallow: /api/*
 Disallow: /lets-grow-together
 Disallow: /lets-grow-together/
+Disallow: /lets-grow-together/*
+Disallow: /draft
+Disallow: /draft/
+Disallow: /drafts/
+Disallow: /preview
+Disallow: /preview/
+Disallow: /staging/
 
 User-agent: ClaudeBot
 Allow: /
@@ -234,10 +283,37 @@ Disallow: /api/
 Disallow: /api/*
 Disallow: /lets-grow-together
 Disallow: /lets-grow-together/
+Disallow: /lets-grow-together/*
 Disallow: /draft
 Disallow: /draft/
+Disallow: /drafts/
 Disallow: /preview
 Disallow: /preview/
+Disallow: /staging/
+Disallow: /404
+Disallow: /500
+
+User-agent: anthropic-ai
+Allow: /
+Disallow: /admin
+Disallow: /admin/
+Disallow: /admin/*
+Disallow: /api
+Disallow: /api/
+Disallow: /api/*
+Disallow: /lets-grow-together
+Disallow: /lets-grow-together/
+
+User-agent: Claude-Web
+Allow: /
+Disallow: /admin
+Disallow: /admin/
+Disallow: /admin/*
+Disallow: /api
+Disallow: /api/
+Disallow: /api/*
+Disallow: /lets-grow-together
+Disallow: /lets-grow-together/
 
 User-agent: PerplexityBot
 Allow: /
@@ -249,10 +325,15 @@ Disallow: /api/
 Disallow: /api/*
 Disallow: /lets-grow-together
 Disallow: /lets-grow-together/
+Disallow: /lets-grow-together/*
 Disallow: /draft
 Disallow: /draft/
+Disallow: /drafts/
 Disallow: /preview
 Disallow: /preview/
+Disallow: /staging/
+Disallow: /404
+Disallow: /500
 
 User-agent: Google-Extended
 Allow: /
@@ -264,8 +345,55 @@ Disallow: /api/
 Disallow: /api/*
 Disallow: /lets-grow-together
 Disallow: /lets-grow-together/
+Disallow: /lets-grow-together/*
+Disallow: /draft
+Disallow: /draft/
+Disallow: /drafts/
+Disallow: /preview
+Disallow: /preview/
+Disallow: /staging/
 
 User-agent: Applebot-Extended
+Allow: /
+Disallow: /admin
+Disallow: /admin/
+Disallow: /admin/*
+Disallow: /api
+Disallow: /api/
+Disallow: /api/*
+Disallow: /lets-grow-together
+Disallow: /lets-grow-together/
+Disallow: /lets-grow-together/*
+Disallow: /draft
+Disallow: /draft/
+Disallow: /drafts/
+Disallow: /preview
+Disallow: /preview/
+Disallow: /staging/
+
+User-agent: Amazonbot
+Allow: /
+Disallow: /admin
+Disallow: /admin/
+Disallow: /admin/*
+Disallow: /api
+Disallow: /api/
+Disallow: /api/*
+Disallow: /lets-grow-together
+Disallow: /lets-grow-together/
+
+User-agent: Bytespider
+Allow: /
+Disallow: /admin
+Disallow: /admin/
+Disallow: /admin/*
+Disallow: /api
+Disallow: /api/
+Disallow: /api/*
+Disallow: /lets-grow-together
+Disallow: /lets-grow-together/
+
+User-agent: CCBot
 Allow: /
 Disallow: /admin
 Disallow: /admin/
