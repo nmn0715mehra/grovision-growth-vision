@@ -45,6 +45,9 @@ export function AboutSection({ heading = "h2" }: { heading?: "h1" | "h2" }) {
                 src="/images/site/about-strategy-studio.jpg"
                 alt="GROVISION strategic workspace and brand direction"
                 loading="lazy"
+                decoding="async"
+                width={1100}
+                height={614}
                 className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-navy/60 via-transparent to-transparent opacity-70" />

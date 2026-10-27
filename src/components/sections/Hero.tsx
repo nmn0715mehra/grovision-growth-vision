@@ -50,6 +50,10 @@ function StrategicGrowthCard() {
             src="/images/site/hero-strategic-growth.jpg"
             alt="Strategic digital growth and brand positioning"
             loading="eager"
+            fetchPriority="high"
+            decoding="async"
+            width={1100}
+            height={614}
             className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-navy/70 via-navy/20 to-transparent" />

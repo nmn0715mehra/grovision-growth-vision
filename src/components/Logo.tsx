@@ -61,6 +61,8 @@ export function Logo({ variant = "full", tone = "default", className }: LogoProp
     <img
       src={src}
       alt="GROVISION — where vision meets growth"
+      loading="eager"
+      decoding="async"
       width={variant === "stacked" ? 700 : 900}
       height={variant === "stacked" ? 487 : 219}
       className={cn(

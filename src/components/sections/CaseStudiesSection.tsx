@@ -30,6 +30,9 @@ export function CaseStudiesSection({ heading = "h2" }: { heading?: "h1" | "h2" }
               src="/images/site/growth-funnel-collaboration.jpg"
               alt="Data-driven marketing funnel analysis and performance strategy"
               loading="lazy"
+              decoding="async"
+              width={1100}
+              height={614}
               className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-navy/50 via-transparent to-transparent opacity-60" />

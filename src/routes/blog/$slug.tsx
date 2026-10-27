@@ -187,6 +187,11 @@ export function BlogPostDetailPage() {
             <img
               src={blog.coverImage}
               alt={blog.title}
+              fetchPriority="high"
+              loading="eager"
+              decoding="async"
+              width={1200}
+              height={630}
               className="w-full h-72 sm:h-96 object-cover"
             />
           </div>
