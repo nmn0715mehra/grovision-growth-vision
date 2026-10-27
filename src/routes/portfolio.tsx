@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PortfolioSection } from "@/components/sections/PortfolioSection";
 import { CaseStudiesSection } from "@/components/sections/CaseStudiesSection";
+import { createBreadcrumbSchema, jsonLdScript } from "@/lib/schema";
 
 const title = "Portfolio | Creative & Growth Campaigns | GROVISION";
 const description =
@@ -17,6 +18,14 @@ export const Route = createFileRoute("/portfolio")({
       { property: "og:url", content: "/portfolio" },
     ],
     links: [{ rel: "canonical", href: "/portfolio" }],
+    scripts: [
+      jsonLdScript([
+        createBreadcrumbSchema([
+          { name: "Home", path: "/" },
+          { name: "Portfolio", path: "/portfolio" },
+        ]),
+      ]),
+    ],
   }),
   component: PortfolioPage,
 });

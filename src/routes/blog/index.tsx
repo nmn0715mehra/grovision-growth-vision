@@ -4,6 +4,7 @@ import { useBlogStore, type BlogPost } from "@/lib/blog-store";
 import { Search, ArrowRight, Clock, Calendar, Sparkles, Tag } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
+import { createBreadcrumbSchema, jsonLdScript } from "@/lib/schema";
 
 export const Route = createFileRoute("/blog/")({
   head: () => ({
@@ -20,6 +21,15 @@ export const Route = createFileRoute("/blog/")({
         content:
           "Deep perspectives on modern SEO and digital brand growth. For founders and leaders who value clarity over trends.",
       },
+    ],
+    links: [{ rel: "canonical", href: "/blog" }],
+    scripts: [
+      jsonLdScript([
+        createBreadcrumbSchema([
+          { name: "Home", path: "/" },
+          { name: "Blog", path: "/blog" },
+        ]),
+      ]),
     ],
   }),
   component: BlogIndexPage,

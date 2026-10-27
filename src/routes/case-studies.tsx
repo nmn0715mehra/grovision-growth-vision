@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { CaseStudiesSection } from "@/components/sections/CaseStudiesSection";
 import { PortfolioSection } from "@/components/sections/PortfolioSection";
+import { createBreadcrumbSchema, jsonLdScript } from "@/lib/schema";
 
 const title = "Case Studies | Digital Marketing Results | GROVISION";
 const description =
@@ -17,6 +18,14 @@ export const Route = createFileRoute("/case-studies")({
       { property: "og:url", content: "/case-studies" },
     ],
     links: [{ rel: "canonical", href: "/case-studies" }],
+    scripts: [
+      jsonLdScript([
+        createBreadcrumbSchema([
+          { name: "Home", path: "/" },
+          { name: "Case Studies", path: "/case-studies" },
+        ]),
+      ]),
+    ],
   }),
   component: CaseStudiesPage,
 });

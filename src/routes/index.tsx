@@ -10,6 +10,12 @@ import { AboutSection } from "@/components/sections/AboutSection";
 import { Philosophy } from "@/components/sections/Philosophy";
 import { ContactSection } from "@/components/sections/ContactSection";
 import { BlogSection } from "@/components/sections/BlogSection";
+import {
+  createWebSiteSchema,
+  createOrganizationSchema,
+  createPersonSchema,
+  jsonLdScript,
+} from "@/lib/schema";
 
 const title = "GROVISION | Digital Marketing & Growth Strategy";
 const description =
@@ -44,17 +50,7 @@ export const Route = createFileRoute("/")({
       },
     ],
     scripts: [
-      {
-        type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "Organization",
-          name: "GROVISION",
-          slogan: "Where vision meets growth.",
-          description,
-          areaServed: ["IN", "US", "GB", "EU"],
-        }),
-      },
+      jsonLdScript([createWebSiteSchema(), createOrganizationSchema(), createPersonSchema()]),
     ],
   }),
   component: Index,

@@ -3,6 +3,7 @@ import { ServicesSection } from "@/components/sections/ServicesSection";
 import { WhoWeHelp } from "@/components/sections/WhoWeHelp";
 import { Approach } from "@/components/sections/Approach";
 import { ContactSection } from "@/components/sections/ContactSection";
+import { createServicesSchema, createBreadcrumbSchema, jsonLdScript } from "@/lib/schema";
 
 const title = "Digital Marketing Services & SEO Strategy | GROVISION";
 const description =
@@ -19,6 +20,15 @@ export const Route = createFileRoute("/services")({
       { property: "og:url", content: "/services" },
     ],
     links: [{ rel: "canonical", href: "/services" }],
+    scripts: [
+      jsonLdScript([
+        ...createServicesSchema(),
+        createBreadcrumbSchema([
+          { name: "Home", path: "/" },
+          { name: "Services", path: "/services" },
+        ]),
+      ]),
+    ],
   }),
   component: ServicesPage,
 });
