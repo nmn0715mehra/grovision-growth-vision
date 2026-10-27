@@ -104,7 +104,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
-        rel: "stylesheet",
+        rel: "preload",
+        as: "style",
         href: "https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap",
       },
       { rel: "icon", href: "/favicon.png", type: "image/png" },
@@ -121,6 +122,23 @@ function RootShell({ children }: { children: ReactNode }) {
     <html lang="en">
       <head>
         <HeadContent />
+        {/* Asynchronous non-blocking Google Font stylesheet injection */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              var fontStyle = document.createElement('link');
+              fontStyle.rel = 'stylesheet';
+              fontStyle.href = 'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap';
+              document.head.appendChild(fontStyle);
+            `,
+          }}
+        />
+        <noscript>
+          <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+          />
+        </noscript>
         {/* Third-party analytics initialized on idle/interaction without blocking initial paint or TBT */}
         <script
           dangerouslySetInnerHTML={{

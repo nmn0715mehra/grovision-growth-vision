@@ -1,6 +1,5 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, Search, Target, TrendingUp, Layers, CheckCircle2 } from "lucide-react";
-import { Reveal } from "../Reveal";
 import { brand } from "@/lib/site";
 
 function StrategicGrowthCard() {
@@ -46,16 +45,24 @@ function StrategicGrowthCard() {
       <div className="relative overflow-hidden rounded-xl border border-border/80 bg-white shadow-card transition-all duration-300 hover:border-gold/50 hover:shadow-lift">
         {/* Visual Hero Header */}
         <div className="relative h-44 sm:h-52 w-full overflow-hidden border-b border-border/80 bg-navy/5">
-          <img
-            src="/images/site/hero-strategic-growth.jpg"
-            alt="Strategic digital growth and brand positioning"
-            loading="eager"
-            fetchPriority="high"
-            decoding="async"
-            width={1100}
-            height={614}
-            className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
-          />
+          <picture>
+            <source
+              media="(max-width: 640px)"
+              srcSet="/images/site/hero-strategic-growth-mobile.jpg"
+              width={640}
+              height={357}
+            />
+            <img
+              src="/images/site/hero-strategic-growth.jpg"
+              alt="Strategic digital growth and brand positioning"
+              loading="eager"
+              fetchPriority="high"
+              decoding="async"
+              width={1100}
+              height={614}
+              className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
+            />
+          </picture>
           <div className="absolute inset-0 bg-gradient-to-t from-navy/70 via-navy/20 to-transparent" />
           <div className="absolute bottom-3 left-4 right-4 flex items-center justify-between text-white">
             <span className="inline-flex items-center gap-1.5 rounded bg-navy/85 px-2.5 py-1 text-[11px] font-semibold tracking-wider text-ivory border border-white/10 backdrop-blur-md">
@@ -125,54 +132,42 @@ export function Hero() {
       <div aria-hidden="true" className="grid-lines absolute inset-0 opacity-70" />
       <div className="relative mx-auto grid w-full max-w-6xl items-center gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
         <div>
-          <Reveal>
-            <p className="eyebrow text-navy/60">{brand.name}</p>
-          </Reveal>
-          <Reveal delay={70}>
-            <p className="eyebrow mt-3 flex items-center gap-3 text-gold">
-              <span aria-hidden="true" className="h-px w-8 bg-current" />
-              {brand.tagline}
-            </p>
-          </Reveal>
-          <Reveal delay={140}>
-            <h1 className="mt-6 text-[2.25rem] font-bold leading-[1.05] text-navy sm:text-5xl lg:text-[4rem]">
-              Turn Your Vision Into Growth.
-            </h1>
-          </Reveal>
-          <Reveal delay={210}>
-            <p className="mt-6 max-w-xl text-base leading-relaxed text-navy/75 sm:text-lg">
-              Strategic digital marketing for ambitious businesses that know where they want to go —
-              but need the right direction to get there.
-            </p>
-          </Reveal>
-          <Reveal delay={280}>
-            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-              <Link
-                to="/"
-                hash="lets-grow-together"
-                className="group inline-flex items-center justify-center gap-2 border border-navy bg-navy px-7 py-4 text-xs font-semibold uppercase tracking-[0.16em] text-ivory transition-all duration-300 hover:-translate-y-0.5 hover:bg-navy-soft hover:shadow-lift"
-              >
-                Let&apos;s Grow Together
-                <ArrowRight
-                  aria-hidden="true"
-                  className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
-                />
-              </Link>
-              <Link
-                to="/services"
-                className="inline-flex items-center justify-center gap-2 border border-navy/25 px-7 py-4 text-xs font-semibold uppercase tracking-[0.16em] text-navy transition-all duration-300 hover:-translate-y-0.5 hover:border-gold hover:bg-ivory"
-              >
-                Explore Services
-              </Link>
-            </div>
-          </Reveal>
+          <p className="eyebrow text-navy/60">{brand.name}</p>
+          <p className="eyebrow mt-3 flex items-center gap-3 text-gold">
+            <span aria-hidden="true" className="h-px w-8 bg-current" />
+            {brand.tagline}
+          </p>
+          <h1 className="mt-6 text-[2.25rem] font-bold leading-[1.05] text-navy sm:text-5xl lg:text-[4rem]">
+            Turn Your Vision Into Growth.
+          </h1>
+          <p className="mt-6 max-w-xl text-base leading-relaxed text-navy/75 sm:text-lg">
+            Strategic digital marketing for ambitious businesses that know where they want to go —
+            but need the right direction to get there.
+          </p>
+          <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+            <Link
+              to="/"
+              hash="lets-grow-together"
+              className="group inline-flex items-center justify-center gap-2 border border-navy bg-navy px-7 py-4 text-xs font-semibold uppercase tracking-[0.16em] text-ivory transition-all duration-300 hover:-translate-y-0.5 hover:bg-navy-soft hover:shadow-lift"
+            >
+              Let&apos;s Grow Together
+              <ArrowRight
+                aria-hidden="true"
+                className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
+              />
+            </Link>
+            <Link
+              to="/services"
+              className="inline-flex items-center justify-center gap-2 border border-navy/25 px-7 py-4 text-xs font-semibold uppercase tracking-[0.16em] text-navy transition-all duration-300 hover:-translate-y-0.5 hover:border-gold hover:bg-ivory"
+            >
+              Explore Services
+            </Link>
+          </div>
         </div>
 
         {/* Strategic Growth Framework card: responsive on mobile and desktop */}
         <div className="w-full mt-2 lg:mt-0">
-          <Reveal delay={200}>
-            <StrategicGrowthCard />
-          </Reveal>
+          <StrategicGrowthCard />
         </div>
       </div>
     </section>

@@ -31,7 +31,15 @@ export const Route = createFileRoute("/")({
       {
         rel: "preload",
         as: "image",
+        href: "/images/site/hero-strategic-growth-mobile.jpg",
+        media: "(max-width: 640px)",
+        fetchPriority: "high",
+      },
+      {
+        rel: "preload",
+        as: "image",
         href: "/images/site/hero-strategic-growth.jpg",
+        media: "(min-width: 641px)",
         fetchPriority: "high",
       },
     ],
