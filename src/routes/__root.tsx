@@ -12,6 +12,7 @@ import {
 import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
+import { criticalCss } from "../lib/critical-css";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
@@ -96,7 +97,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     ],
     links: [
       {
-        rel: "stylesheet",
+        rel: "preload",
+        as: "style",
         href: appCss,
       },
       {
@@ -120,6 +122,38 @@ function RootShell({ children }: { children: ReactNode }) {
     <html lang="en">
       <head>
         <HeadContent />
+        {/* Critical Above-The-Fold CSS inlined to achieve sub-1s FCP and LCP */}
+        <style dangerouslySetInnerHTML={{ __html: criticalCss }} />
+        <link rel="stylesheet" href={appCss} media="print" id="grovision-main-css" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `!function(){var l=document.getElementById("grovision-main-css");if(l){if(l.sheet){l.media="all"}else{l.addEventListener("load",function(){l.media="all"})}}}();`,
+          }}
+        />
+        <noscript>
+          <link rel="stylesheet" href={appCss} />
+        </noscript>
+      </head>
+      <body>
+        <noscript>
+          <img
+            height="1"
+            width="1"
+            style={{ display: "none" }}
+            alt=""
+            src="https://www.facebook.com/tr?id=927867306670360&ev=PageView&noscript=1"
+          />
+        </noscript>
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-KXPBJZGP"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+            title="Google Tag Manager"
+          />
+        </noscript>
+        {children}
         {/* Third-party analytics initialized on idle/interaction without blocking initial paint or TBT */}
         <script
           dangerouslySetInnerHTML={{
@@ -187,27 +221,6 @@ function RootShell({ children }: { children: ReactNode }) {
             `,
           }}
         />
-      </head>
-      <body>
-        <noscript>
-          <img
-            height="1"
-            width="1"
-            style={{ display: "none" }}
-            alt=""
-            src="https://www.facebook.com/tr?id=927867306670360&ev=PageView&noscript=1"
-          />
-        </noscript>
-        <noscript>
-          <iframe
-            src="https://www.googletagmanager.com/ns.html?id=GTM-KXPBJZGP"
-            height="0"
-            width="0"
-            style={{ display: "none", visibility: "hidden" }}
-            title="Google Tag Manager"
-          />
-        </noscript>
-        {children}
         <Scripts />
       </body>
     </html>

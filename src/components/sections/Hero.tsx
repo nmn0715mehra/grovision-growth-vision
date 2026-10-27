@@ -47,10 +47,24 @@ function StrategicGrowthCard() {
         <div className="relative h-44 sm:h-52 w-full overflow-hidden border-b border-border/80 bg-navy/5">
           <picture>
             <source
+              type="image/webp"
+              media="(max-width: 640px)"
+              srcSet="/images/site/hero-strategic-growth-mobile.webp"
+              width={640}
+              height={357}
+            />
+            <source
               media="(max-width: 640px)"
               srcSet="/images/site/hero-strategic-growth-mobile.jpg"
               width={640}
               height={357}
+            />
+            <source
+              type="image/webp"
+              media="(min-width: 641px)"
+              srcSet="/images/site/hero-strategic-growth.webp"
+              width={1100}
+              height={614}
             />
             <img
               src="/images/site/hero-strategic-growth.jpg"
