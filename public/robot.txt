@@ -15,6 +15,7 @@ Allow: /about
 Allow: /contact
 Allow: /images/
 Allow: /brand/
+Allow: /fonts/
 Allow: /assets/
 Allow: /*.css
 Allow: /*.js

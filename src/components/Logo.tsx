@@ -36,9 +36,10 @@ type LogoProps = {
   /** Use "inverted" on navy/dark backgrounds. */
   tone?: "default" | "inverted";
   className?: string;
+  loading?: "eager" | "lazy";
 };
 
-export function Logo({ variant = "full", tone = "default", className }: LogoProps) {
+export function Logo({ variant = "full", tone = "default", className, loading = "lazy" }: LogoProps) {
   if (variant === "icon") {
     return (
       <span className={cn("inline-flex items-center", className)}>
@@ -61,7 +62,7 @@ export function Logo({ variant = "full", tone = "default", className }: LogoProp
     <img
       src={src}
       alt="GROVISION — where vision meets growth"
-      loading="eager"
+      loading={loading}
       decoding="async"
       width={variant === "stacked" ? 700 : 900}
       height={variant === "stacked" ? 487 : 219}
