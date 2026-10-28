@@ -17,7 +17,6 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
-import { createArticleSchema, createBreadcrumbSchema, jsonLdScript } from "@/lib/schema";
 
 export const Route = createFileRoute("/blog/$slug")({
   head: ({ params }) => {
@@ -35,18 +34,6 @@ export const Route = createFileRoute("/blog/$slug")({
       description = `${description.substring(0, 157).trim()}...`;
     }
 
-    const schemas: Record<string, unknown>[] = [];
-    if (blog) {
-      schemas.push(createArticleSchema(blog));
-    }
-    schemas.push(
-      createBreadcrumbSchema([
-        { name: "Home", path: "/" },
-        { name: "Blog", path: "/blog" },
-        { name: blog?.title || params.slug, path: `/blog/${params.slug}` },
-      ]),
-    );
-
     return {
       meta: [
         { title },
@@ -60,7 +47,6 @@ export const Route = createFileRoute("/blog/$slug")({
         },
       ],
       links: [{ rel: "canonical", href: `/blog/${params.slug}` }],
-      scripts: [jsonLdScript(schemas)],
     };
   },
   component: BlogPostDetailPage,
@@ -201,11 +187,6 @@ export function BlogPostDetailPage() {
             <img
               src={blog.coverImage}
               alt={blog.title}
-              fetchPriority="high"
-              loading="eager"
-              decoding="async"
-              width={1200}
-              height={630}
               className="w-full h-72 sm:h-96 object-cover"
             />
           </div>

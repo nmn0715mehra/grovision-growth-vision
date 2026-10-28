@@ -10,12 +10,6 @@ import { AboutSection } from "@/components/sections/AboutSection";
 import { Philosophy } from "@/components/sections/Philosophy";
 import { ContactSection } from "@/components/sections/ContactSection";
 import { BlogSection } from "@/components/sections/BlogSection";
-import {
-  createWebSiteSchema,
-  createOrganizationSchema,
-  createPersonSchema,
-  jsonLdScript,
-} from "@/lib/schema";
 
 const title = "GROVISION | Digital Marketing & Growth Strategy";
 const description =
@@ -32,27 +26,19 @@ export const Route = createFileRoute("/")({
       { property: "og:url", content: "/" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [
-      { rel: "canonical", href: "/" },
-      {
-        rel: "preload",
-        as: "image",
-        type: "image/webp",
-        href: "/images/site/hero-strategic-growth-mobile.webp",
-        media: "(max-width: 640px)",
-        fetchPriority: "high",
-      },
-      {
-        rel: "preload",
-        as: "image",
-        type: "image/webp",
-        href: "/images/site/hero-strategic-growth.webp",
-        media: "(min-width: 641px)",
-        fetchPriority: "high",
-      },
-    ],
+    links: [{ rel: "canonical", href: "/" }],
     scripts: [
-      jsonLdScript([createWebSiteSchema(), createOrganizationSchema(), createPersonSchema()]),
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          name: "GROVISION",
+          slogan: "Where vision meets growth.",
+          description,
+          areaServed: ["IN", "US", "GB", "EU"],
+        }),
+      },
     ],
   }),
   component: Index,

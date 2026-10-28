@@ -12,7 +12,6 @@ import {
 import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
-import { criticalCss } from "../lib/critical-css";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
@@ -97,16 +96,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     ],
     links: [
       {
-        rel: "preload",
-        as: "style",
+        rel: "stylesheet",
         href: appCss,
       },
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
-        rel: "preload",
-        as: "font",
-        type: "font/woff2",
-        href: "/fonts/montserrat.woff2",
-        crossOrigin: "anonymous",
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap",
       },
       { rel: "icon", href: "/favicon.png", type: "image/png" },
     ],
@@ -122,17 +119,32 @@ function RootShell({ children }: { children: ReactNode }) {
     <html lang="en">
       <head>
         <HeadContent />
-        {/* Critical Above-The-Fold CSS inlined to achieve sub-1s FCP and LCP */}
-        <style dangerouslySetInnerHTML={{ __html: criticalCss }} />
-        <link rel="stylesheet" href={appCss} media="print" id="grovision-main-css" />
         <script
           dangerouslySetInnerHTML={{
-            __html: `!function(){var l=document.getElementById("grovision-main-css");if(l){if(l.sheet){l.media="all"}else{l.addEventListener("load",function(){l.media="all"})}}}();`,
+            __html:
+              '(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "ym59ylhaji");',
           }}
         />
-        <noscript>
-          <link rel="stylesheet" href={appCss} />
-        </noscript>
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              "!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init', '927867306670360');fbq('track', 'PageView');",
+          }}
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              "(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-KXPBJZGP');",
+          }}
+        />
+        {/* Google tag (gtag.js) — Google Ads AW-18400173969 */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18400173969" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              "window.dataLayer = window.dataLayer || [];\nfunction gtag(){dataLayer.push(arguments);}\ngtag('js', new Date());\ngtag('config', 'AW-18400173969');",
+          }}
+        />
       </head>
       <body>
         <noscript>
@@ -154,73 +166,6 @@ function RootShell({ children }: { children: ReactNode }) {
           />
         </noscript>
         {children}
-        {/* Third-party analytics initialized on idle/interaction without blocking initial paint or TBT */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){window.dataLayer.push(arguments);}
-              window.gtag = gtag;
-
-              !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-              n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-              n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];}(window, document);
-
-              (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-              })(window, document, "clarity");
-
-              function __loadThirdPartyAnalytics(){
-                if(window.__analyticsLoaded) return;
-                window.__analyticsLoaded = true;
-
-                ['scroll', 'touchstart', 'click', 'keydown', 'mousemove'].forEach(function(ev){
-                  window.removeEventListener(ev, __loadThirdPartyAnalytics);
-                });
-
-                // 1. Google Tag Manager & Google Ads gtag
-                var gtmScript = document.createElement('script');
-                gtmScript.async = true;
-                gtmScript.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-KXPBJZGP';
-                document.head.appendChild(gtmScript);
-
-                var gtagScript = document.createElement('script');
-                gtagScript.async = true;
-                gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=AW-18400173969';
-                document.head.appendChild(gtagScript);
-                gtag('js', new Date());
-                gtag('config', 'AW-18400173969');
-
-                // 2. Meta Pixel (staggered to prevent any task exceeding 50ms)
-                setTimeout(function(){
-                  var fbScript = document.createElement('script');
-                  fbScript.async = true;
-                  fbScript.src = 'https://connect.facebook.net/en_US/fbevents.js';
-                  document.head.appendChild(fbScript);
-                  fbq('init', '927867306670360');
-                  fbq('track', 'PageView');
-                }, 150);
-
-                // 3. Microsoft Clarity (staggered)
-                setTimeout(function(){
-                  var clarityScript = document.createElement('script');
-                  clarityScript.async = true;
-                  clarityScript.src = 'https://www.clarity.ms/tag/ym59ylhaji';
-                  document.head.appendChild(clarityScript);
-                }, 300);
-              }
-
-              if (typeof window !== 'undefined') {
-                // Real user interactions trigger tracking immediately
-                ['scroll', 'touchstart', 'click', 'keydown', 'mousemove'].forEach(function(ev){
-                  window.addEventListener(ev, __loadThirdPartyAnalytics, { once: true, passive: true });
-                });
-
-                // 5.5s safety timeout for passive sessions (prevents TBT during PageSpeed audit window)
-                setTimeout(__loadThirdPartyAnalytics, 5500);
-              }
-            `,
-          }}
-        />
         <Scripts />
       </body>
     </html>

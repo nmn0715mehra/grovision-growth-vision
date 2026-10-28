@@ -4,12 +4,6 @@ import { Philosophy } from "@/components/sections/Philosophy";
 import { BrandIntro } from "@/components/sections/BrandIntro";
 import { Approach } from "@/components/sections/Approach";
 import { ContactSection } from "@/components/sections/ContactSection";
-import {
-  createProfilePageSchema,
-  createPersonSchema,
-  createBreadcrumbSchema,
-  jsonLdScript,
-} from "@/lib/schema";
 
 const title = "About GROVISION | Strategic Digital Marketing Brand";
 const description =
@@ -26,16 +20,6 @@ export const Route = createFileRoute("/about")({
       { property: "og:url", content: "/about" },
     ],
     links: [{ rel: "canonical", href: "/about" }],
-    scripts: [
-      jsonLdScript([
-        createProfilePageSchema(),
-        createPersonSchema(),
-        createBreadcrumbSchema([
-          { name: "Home", path: "/" },
-          { name: "About", path: "/about" },
-        ]),
-      ]),
-    ],
   }),
   component: AboutPage,
 });

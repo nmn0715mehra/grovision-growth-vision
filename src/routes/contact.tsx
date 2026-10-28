@@ -3,7 +3,6 @@ import { ArrowRight, Instagram, Linkedin, Mail, MessageCircle, Phone } from "luc
 import { Section, SectionHeading } from "@/components/SectionHeading";
 import { Reveal } from "@/components/Reveal";
 import { contactChannels, socialLinks } from "@/lib/site";
-import { createContactPageSchema, createBreadcrumbSchema, jsonLdScript } from "@/lib/schema";
 
 const title = "Contact GROVISION | Start Your Growth Consultation";
 const description =
@@ -24,15 +23,6 @@ export const Route = createFileRoute("/contact")({
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [{ rel: "canonical", href: "/contact" }],
-    scripts: [
-      jsonLdScript([
-        createContactPageSchema(),
-        createBreadcrumbSchema([
-          { name: "Home", path: "/" },
-          { name: "Contact", path: "/contact" },
-        ]),
-      ]),
-    ],
   }),
   component: ContactPage,
 });
