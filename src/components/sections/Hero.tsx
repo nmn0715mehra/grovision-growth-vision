@@ -117,32 +117,32 @@ function StrategicGrowthCard() {
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden bg-beige px-5 pb-10 pt-12 sm:px-8 sm:pb-12 sm:pt-16 lg:pb-14 lg:pt-20">
+    <section className="relative overflow-hidden bg-beige px-5 pb-10 pt-8 sm:px-8 sm:pb-12 sm:pt-10 lg:pb-14 lg:pt-11">
       <div aria-hidden="true" className="grid-lines absolute inset-0 opacity-70" />
-      <div className="relative mx-auto grid w-full max-w-6xl items-center gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
-        <div>
+      <div className="relative mx-auto grid w-full max-w-6xl items-start gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
+        <div className="pt-1">
           <Reveal>
             <p className="eyebrow text-navy/60">{brand.name}</p>
           </Reveal>
           <Reveal delay={70}>
-            <p className="eyebrow mt-3 flex items-center gap-3 text-gold">
+            <p className="eyebrow mt-2.5 flex items-center gap-3 text-gold">
               <span aria-hidden="true" className="h-px w-8 bg-current" />
               {brand.tagline}
             </p>
           </Reveal>
           <Reveal delay={140}>
-            <h1 className="mt-6 text-[2.25rem] font-bold leading-[1.05] text-navy sm:text-5xl lg:text-[4rem]">
+            <h1 className="mt-5 text-[2.25rem] font-bold leading-[1.05] text-navy sm:text-5xl lg:text-[3.75rem] xl:text-[4rem]">
               Turn Your Vision Into Growth.
             </h1>
           </Reveal>
           <Reveal delay={210}>
-            <p className="mt-6 max-w-xl text-base leading-relaxed text-navy/75 sm:text-lg">
+            <p className="mt-4 max-w-xl text-base leading-relaxed text-navy/75 sm:text-lg">
               Strategic digital marketing for ambitious businesses that know where they want to go —
               but need the right direction to get there.
             </p>
           </Reveal>
           <Reveal delay={280}>
-            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+            <div className="mt-7 flex flex-col gap-3 sm:flex-row">
               <Link
                 to="/"
                 hash="lets-grow-together"
