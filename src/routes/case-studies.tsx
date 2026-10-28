@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { CaseStudiesSection } from "@/components/sections/CaseStudiesSection";
 import { PortfolioSection } from "@/components/sections/PortfolioSection";
+import { getCanonicalUrl } from "@/lib/site";
 
 const title = "Case Studies | Digital Marketing Results | GROVISION";
 const description =
@@ -14,9 +15,9 @@ export const Route = createFileRoute("/case-studies")({
       { property: "og:title", content: title },
       { property: "og:description", content: description },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "/case-studies" },
+      { property: "og:url", content: getCanonicalUrl("/case-studies") },
     ],
-    links: [{ rel: "canonical", href: "/case-studies" }],
+    links: [{ rel: "canonical", href: getCanonicalUrl("/case-studies") }],
   }),
   component: CaseStudiesPage,
 });

@@ -1,6 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { useBlogStore, getStaticBlogBySlug, type BlogPost } from "@/lib/blog-store";
 import { MarkdownRenderer } from "@/components/blog/MarkdownRenderer";
+import { getCanonicalUrl } from "@/lib/site";
 import {
   Clock,
   Calendar,
@@ -42,11 +43,20 @@ export const Route = createFileRoute("/blog/$slug")({
         { property: "og:description", content: description },
         { property: "og:type", content: "article" },
         {
+          property: "og:url",
+          content: blog?.seo.canonicalUrl || getCanonicalUrl(`/blog/${params.slug}`),
+        },
+        {
           name: "robots",
           content: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
         },
       ],
-      links: [{ rel: "canonical", href: `/blog/${params.slug}` }],
+      links: [
+        {
+          rel: "canonical",
+          href: blog?.seo.canonicalUrl || getCanonicalUrl(`/blog/${params.slug}`),
+        },
+      ],
     };
   },
   component: BlogPostDetailPage,

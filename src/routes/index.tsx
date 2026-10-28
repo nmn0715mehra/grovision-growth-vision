@@ -11,6 +11,8 @@ import { Philosophy } from "@/components/sections/Philosophy";
 import { ContactSection } from "@/components/sections/ContactSection";
 import { BlogSection } from "@/components/sections/BlogSection";
 
+import { getCanonicalUrl } from "@/lib/site";
+
 const title = "GROVISION | Digital Marketing & Growth Strategy";
 const description =
   "GROVISION is a strategic digital marketing brand helping ambitious businesses scale online with data-driven SEO, paid media, and growth strategy.";
@@ -23,10 +25,10 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: title },
       { property: "og:description", content: description },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "/" },
+      { property: "og:url", content: getCanonicalUrl("/") },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: "/" }],
+    links: [{ rel: "canonical", href: getCanonicalUrl("/") }],
     scripts: [
       {
         type: "application/ld+json",

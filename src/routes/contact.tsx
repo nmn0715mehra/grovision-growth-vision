@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Instagram, Linkedin, Mail, MessageCircle, Phone } from "lucide-react";
 import { Section, SectionHeading } from "@/components/SectionHeading";
 import { Reveal } from "@/components/Reveal";
-import { contactChannels, socialLinks } from "@/lib/site";
+import { contactChannels, socialLinks, getCanonicalUrl } from "@/lib/site";
 
 const title = "Contact GROVISION | Start Your Growth Consultation";
 const description =
@@ -19,10 +19,10 @@ export const Route = createFileRoute("/contact")({
       { property: "og:title", content: title },
       { property: "og:description", content: description },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "/contact" },
+      { property: "og:url", content: getCanonicalUrl("/contact") },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: "/contact" }],
+    links: [{ rel: "canonical", href: getCanonicalUrl("/contact") }],
   }),
   component: ContactPage,
 });

@@ -4,6 +4,7 @@ import { Philosophy } from "@/components/sections/Philosophy";
 import { BrandIntro } from "@/components/sections/BrandIntro";
 import { Approach } from "@/components/sections/Approach";
 import { ContactSection } from "@/components/sections/ContactSection";
+import { getCanonicalUrl } from "@/lib/site";
 
 const title = "About GROVISION | Strategic Digital Marketing Brand";
 const description =
@@ -17,9 +18,9 @@ export const Route = createFileRoute("/about")({
       { property: "og:title", content: title },
       { property: "og:description", content: description },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "/about" },
+      { property: "og:url", content: getCanonicalUrl("/about") },
     ],
-    links: [{ rel: "canonical", href: "/about" }],
+    links: [{ rel: "canonical", href: getCanonicalUrl("/about") }],
   }),
   component: AboutPage,
 });

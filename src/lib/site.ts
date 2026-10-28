@@ -13,6 +13,24 @@ export const brand = {
     "GROVISION is a strategic digital marketing brand helping ambitious businesses scale online with data-driven SEO, paid media, and growth strategy.",
 } as const;
 
+/**
+ * Primary canonical website URL.
+ */
+export const SITE_URL = "https://grovision.shop";
+
+/**
+ * Returns the full absolute canonical URL on https://grovision.shop
+ */
+export function getCanonicalUrl(path = "/"): string {
+  if (!path || path === "/" || path === "") {
+    return `${SITE_URL}/`;
+  }
+  const cleanPath = path.startsWith("/") ? path : `/${path}`;
+  const normalized =
+    cleanPath.endsWith("/") && cleanPath.length > 1 ? cleanPath.slice(0, -1) : cleanPath;
+  return `${SITE_URL}${normalized}`;
+}
+
 export type ContactChannel = {
   id: string;
   label: string;

@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PortfolioSection } from "@/components/sections/PortfolioSection";
 import { CaseStudiesSection } from "@/components/sections/CaseStudiesSection";
+import { getCanonicalUrl } from "@/lib/site";
 
 const title = "Portfolio | Creative & Growth Campaigns | GROVISION";
 const description =
@@ -14,9 +15,9 @@ export const Route = createFileRoute("/portfolio")({
       { property: "og:title", content: title },
       { property: "og:description", content: description },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "/portfolio" },
+      { property: "og:url", content: getCanonicalUrl("/portfolio") },
     ],
-    links: [{ rel: "canonical", href: "/portfolio" }],
+    links: [{ rel: "canonical", href: getCanonicalUrl("/portfolio") }],
   }),
   component: PortfolioPage,
 });

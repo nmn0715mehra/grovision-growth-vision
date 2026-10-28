@@ -4,6 +4,7 @@ import { useBlogStore, type BlogPost } from "@/lib/blog-store";
 import { Search, ArrowRight, Clock, Calendar, Sparkles, Tag } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
+import { getCanonicalUrl } from "@/lib/site";
 
 export const Route = createFileRoute("/blog/")({
   head: () => ({
@@ -20,7 +21,11 @@ export const Route = createFileRoute("/blog/")({
         content:
           "Deep perspectives on modern SEO and digital brand growth. For founders and leaders who value clarity over trends.",
       },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: getCanonicalUrl("/blog") },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
+    links: [{ rel: "canonical", href: getCanonicalUrl("/blog") }],
   }),
   component: BlogIndexPage,
 });
