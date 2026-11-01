@@ -57,6 +57,35 @@ export const Route = createFileRoute("/blog/$slug")({
           href: getCanonicalUrl(`/blog/${params.slug}/`),
         },
       ],
+      scripts: [
+        {
+          type: "application/ld+json",
+          children: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
+            headline: title,
+            description,
+            datePublished: blog?.date || "2026-10-20",
+            author: {
+              "@type": "Organization",
+              name: "GROVISION",
+              url: "https://grovision.shop/",
+            },
+            publisher: {
+              "@type": "Organization",
+              name: "GROVISION",
+              logo: {
+                "@type": "ImageObject",
+                url: "https://grovision.shop/brand/logo-horizontal.webp",
+              },
+            },
+            mainEntityOfPage: {
+              "@type": "WebPage",
+              "@id": getCanonicalUrl(`/blog/${params.slug}/`),
+            },
+          }),
+        },
+      ],
     };
   },
   component: BlogPostDetailPage,

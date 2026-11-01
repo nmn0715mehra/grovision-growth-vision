@@ -20,6 +20,24 @@ export const Route = createFileRoute("/services")({
       { property: "og:url", content: getCanonicalUrl("/services") },
     ],
     links: [{ rel: "canonical", href: getCanonicalUrl("/services") }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Service",
+          name: "Digital Marketing & SEO Strategy",
+          provider: {
+            "@type": "Organization",
+            name: "GROVISION",
+            url: "https://grovision.shop/",
+          },
+          description,
+          serviceType: "Digital Marketing Services",
+          areaServed: ["IN", "US", "GB", "EU"],
+        }),
+      },
+    ],
   }),
   component: ServicesPage,
 });
