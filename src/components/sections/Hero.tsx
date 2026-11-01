@@ -45,7 +45,7 @@ function StrategicGrowthCard() {
 
       <div className="relative overflow-hidden rounded-xl border border-border/80 bg-white shadow-card transition-all duration-300 hover:border-gold/50 hover:shadow-lift">
         {/* Visual Hero Header */}
-        <div className="relative h-44 sm:h-52 w-full overflow-hidden border-b border-border/80 bg-navy/5">
+        <div className="relative h-36 sm:h-40 w-full overflow-hidden border-b border-border/80 bg-navy/5">
           <img
             src="/images/site/hero-strategic-growth.webp"
             alt="Strategic digital growth and brand positioning"
@@ -75,7 +75,7 @@ function StrategicGrowthCard() {
             return (
               <div
                 key={item.num}
-                className="group flex items-start gap-3 p-2.5 sm:p-3 rounded-lg transition-colors hover:bg-beige/40"
+                className="group flex items-start gap-3 p-2 sm:p-2.5 rounded-lg transition-colors hover:bg-beige/40"
               >
                 <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md border border-border bg-ivory text-navy group-hover:border-gold group-hover:text-gold transition-colors">
                   <Icon className="h-4 w-4" />
@@ -123,8 +123,8 @@ export function Hero() {
   return (
     <section className="relative overflow-hidden bg-beige px-5 pb-8 pt-8 sm:px-8 sm:pb-10 sm:pt-10 lg:pb-10 lg:pt-11">
       <div aria-hidden="true" className="grid-lines absolute inset-0 opacity-70" />
-      <div className="relative mx-auto grid w-full max-w-6xl items-start gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
-        <div className="pt-1">
+      <div className="relative mx-auto grid w-full max-w-6xl items-center gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
+        <div>
           <Reveal>
             <p className="eyebrow text-navy/60">{brand.name}</p>
           </Reveal>
@@ -164,36 +164,6 @@ export function Hero() {
               >
                 Explore Services
               </Link>
-            </div>
-          </Reveal>
-          <Reveal delay={350}>
-            <div className="mt-8 border-t border-navy/10 pt-5 sm:pt-6">
-              <div className="grid grid-cols-3 gap-3 sm:gap-6">
-                <div>
-                  <p className="font-display text-xl sm:text-2xl font-bold text-navy tracking-tight">
-                    3.8<span className="text-gold">×</span>
-                  </p>
-                  <p className="mt-1 text-[11px] sm:text-xs font-medium text-navy/70 leading-snug">
-                    Avg. Client ROAS
-                  </p>
-                </div>
-                <div className="border-l border-navy/10 pl-3 sm:pl-6">
-                  <p className="font-display text-xl sm:text-2xl font-bold text-navy tracking-tight">
-                    94<span className="text-gold">%</span>
-                  </p>
-                  <p className="mt-1 text-[11px] sm:text-xs font-medium text-navy/70 leading-snug">
-                    Strategic Retention
-                  </p>
-                </div>
-                <div className="border-l border-navy/10 pl-3 sm:pl-6">
-                  <p className="font-display text-xl sm:text-2xl font-bold text-navy tracking-tight">
-                    Full-Funnel
-                  </p>
-                  <p className="mt-1 text-[11px] sm:text-xs font-medium text-navy/70 leading-snug">
-                    Growth Execution
-                  </p>
-                </div>
-              </div>
             </div>
           </Reveal>
         </div>
