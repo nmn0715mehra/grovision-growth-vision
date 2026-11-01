@@ -90,6 +90,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "GROVISION is a strategic digital marketing brand helping ambitious businesses scale online with data-driven SEO, paid media, and growth strategy.",
       },
       { name: "author", content: "GROVISION" },
+      {
+        name: "robots",
+        content: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      },
+      {
+        name: "googlebot",
+        content: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      },
       { property: "og:site_name", content: "GROVISION" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
