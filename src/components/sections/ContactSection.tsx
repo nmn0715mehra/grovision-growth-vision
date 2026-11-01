@@ -29,7 +29,7 @@ export function ContactSection({
       id={leadPage ? "lets-grow-together" : "contact"}
       tone="beige"
       className={
-        leadPage ? "border-t border-border/50 pt-10 sm:pt-12 lg:pt-14 pb-10 sm:pb-12 lg:pb-14" : ""
+        leadPage ? "border-t border-border/50 pt-8 sm:pt-10 lg:pt-10 pb-10 sm:pb-12 lg:pb-14" : ""
       }
     >
       <SectionHeading

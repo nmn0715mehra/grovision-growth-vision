@@ -121,7 +121,7 @@ function StrategicGrowthCard() {
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden bg-beige px-5 pb-10 pt-8 sm:px-8 sm:pb-12 sm:pt-10 lg:pb-14 lg:pt-11">
+    <section className="relative overflow-hidden bg-beige px-5 pb-8 pt-8 sm:px-8 sm:pb-10 sm:pt-10 lg:pb-10 lg:pt-11">
       <div aria-hidden="true" className="grid-lines absolute inset-0 opacity-70" />
       <div className="relative mx-auto grid w-full max-w-6xl items-start gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
         <div className="pt-1">
@@ -164,6 +164,36 @@ export function Hero() {
               >
                 Explore Services
               </Link>
+            </div>
+          </Reveal>
+          <Reveal delay={350}>
+            <div className="mt-8 border-t border-navy/10 pt-5 sm:pt-6">
+              <div className="grid grid-cols-3 gap-3 sm:gap-6">
+                <div>
+                  <p className="font-display text-xl sm:text-2xl font-bold text-navy tracking-tight">
+                    3.8<span className="text-gold">×</span>
+                  </p>
+                  <p className="mt-1 text-[11px] sm:text-xs font-medium text-navy/70 leading-snug">
+                    Avg. Client ROAS
+                  </p>
+                </div>
+                <div className="border-l border-navy/10 pl-3 sm:pl-6">
+                  <p className="font-display text-xl sm:text-2xl font-bold text-navy tracking-tight">
+                    94<span className="text-gold">%</span>
+                  </p>
+                  <p className="mt-1 text-[11px] sm:text-xs font-medium text-navy/70 leading-snug">
+                    Strategic Retention
+                  </p>
+                </div>
+                <div className="border-l border-navy/10 pl-3 sm:pl-6">
+                  <p className="font-display text-xl sm:text-2xl font-bold text-navy tracking-tight">
+                    Full-Funnel
+                  </p>
+                  <p className="mt-1 text-[11px] sm:text-xs font-medium text-navy/70 leading-snug">
+                    Growth Execution
+                  </p>
+                </div>
+              </div>
             </div>
           </Reveal>
         </div>
