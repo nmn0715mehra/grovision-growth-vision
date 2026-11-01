@@ -25,11 +25,13 @@ export function ServiceCard({
   name,
   summary,
   detail,
+  headingTag: HeadingTag = "h3",
 }: {
   icon: string;
   name: string;
   summary: string;
   detail: string;
+  headingTag?: "h2" | "h3";
 }) {
   const [open, setOpen] = useState(false);
   const Icon = iconMap[icon] ?? Compass;
@@ -39,7 +41,7 @@ export function ServiceCard({
       <span className="flex h-11 w-11 items-center justify-center border border-gold/40 bg-beige text-navy transition-colors duration-300 group-hover:bg-gold group-hover:text-navy">
         <Icon aria-hidden="true" className="h-5 w-5" />
       </span>
-      <h3 className="mt-6 text-lg font-bold sm:text-xl">{name}</h3>
+      <HeadingTag className="mt-6 text-lg font-bold sm:text-xl">{name}</HeadingTag>
       <p className="mt-3 text-sm leading-relaxed text-muted-foreground sm:text-base">{summary}</p>
 
       <div className="mt-auto pt-5">
@@ -84,6 +86,7 @@ export function PortfolioCard({
   focus,
   scope,
   image,
+  headingTag: HeadingTag = "h3",
 }: {
   title: string;
   label: string;
@@ -91,6 +94,7 @@ export function PortfolioCard({
   focus: string;
   scope: readonly string[];
   image?: string;
+  headingTag?: "h2" | "h3";
 }) {
   return (
     <article className="group flex h-full flex-col overflow-hidden border border-border bg-card shadow-card transition-all duration-300 hover:-translate-y-1 hover:border-gold hover:shadow-lift">
@@ -100,7 +104,10 @@ export function PortfolioCard({
             <img
               src={image}
               alt={`${title} - ${discipline}`}
+              width={1200}
+              height={670}
               loading="lazy"
+              decoding="async"
               className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-navy/60 via-navy/10 to-transparent" />
@@ -109,10 +116,7 @@ export function PortfolioCard({
             </span>
           </>
         ) : (
-          <div
-            aria-hidden="true"
-            className="grid-lines relative flex h-full w-full items-end p-5"
-          >
+          <div aria-hidden="true" className="grid-lines relative flex h-full w-full items-end p-5">
             <span className="absolute -right-8 -top-10 h-32 w-32 rounded-full border border-gold/40" />
             <span className="absolute right-6 top-8 h-16 w-16 rounded-full border border-navy/15" />
             <span className="text-4xl font-bold tracking-tight text-navy/15 sm:text-5xl">
@@ -125,9 +129,9 @@ export function PortfolioCard({
         <span className="eyebrow inline-flex w-fit border border-gold/50 px-2.5 py-1 text-gold">
           {label}
         </span>
-        <h3 className="mt-4 text-lg font-bold sm:text-xl text-navy transition-colors group-hover:text-gold">
+        <HeadingTag className="mt-4 text-lg font-bold sm:text-xl text-navy transition-colors group-hover:text-gold">
           {title}
-        </h3>
+        </HeadingTag>
         <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{focus}</p>
         <ul className="mt-5 flex flex-wrap gap-2 pt-1">
           {scope.map((item) => (

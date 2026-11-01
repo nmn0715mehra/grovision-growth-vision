@@ -89,7 +89,7 @@ function ContactPage() {
           </Reveal>
           <Reveal delay={140}>
             <div>
-              <h2 className="eyebrow text-navy">Social</h2>
+              <h2 className="eyebrow text-navy">Social Channels</h2>
               <ul className="mt-5 flex gap-3">
                 {socialLinks.map((social) => {
                   const Icon = socialIcons[social.id as keyof typeof socialIcons] ?? Instagram;

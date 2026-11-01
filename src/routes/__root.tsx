@@ -93,6 +93,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:site_name", content: "GROVISION" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "referrer", content: "strict-origin-when-cross-origin" },
+      { httpEquiv: "X-Content-Type-Options", content: "nosniff" },
+      { httpEquiv: "X-Frame-Options", content: "SAMEORIGIN" },
+      {
+        httpEquiv: "Content-Security-Policy",
+        content:
+          "default-src 'self' https: data: blob: 'unsafe-inline' 'unsafe-eval'; img-src 'self' https: data: blob:; font-src 'self' https://fonts.gstatic.com data:; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.clarity.ms https://*.clarity.ms https://connect.facebook.net https://www.googletagmanager.com; connect-src 'self' https: wss:; frame-src 'self' https://www.googletagmanager.com;",
+      },
     ],
     links: [
       {
@@ -152,7 +160,7 @@ function RootShell({ children }: { children: ReactNode }) {
             height="1"
             width="1"
             style={{ display: "none" }}
-            alt=""
+            alt="Facebook Pixel"
             src="https://www.facebook.com/tr?id=927867306670360&ev=PageView&noscript=1"
           />
         </noscript>

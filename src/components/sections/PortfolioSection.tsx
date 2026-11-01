@@ -4,6 +4,8 @@ import { Reveal } from "../Reveal";
 import { portfolioItems } from "@/lib/site";
 
 export function PortfolioSection({ heading = "h2" }: { heading?: "h1" | "h2" }) {
+  const cardHeadingTag = heading === "h1" ? "h2" : "h3";
+
   return (
     <Section id="portfolio" tone="ivory">
       <SectionHeading
@@ -16,6 +18,7 @@ export function PortfolioSection({ heading = "h2" }: { heading?: "h1" | "h2" }) 
         {portfolioItems.map((item, index) => (
           <Reveal key={item.id} delay={(index % 3) * 80} className="h-full">
             <PortfolioCard
+              headingTag={cardHeadingTag}
               title={item.title}
               label={item.label}
               discipline={item.discipline}

@@ -118,6 +118,10 @@ export function BlogIndexPage() {
                 <img
                   src={featuredPost.coverImage}
                   alt={featuredPost.title}
+                  width={1200}
+                  height={630}
+                  loading="eager"
+                  decoding="async"
                   className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
@@ -194,6 +198,10 @@ export function BlogIndexPage() {
                       <img
                         src={post.coverImage}
                         alt={post.title}
+                        width={1200}
+                        height={630}
+                        loading="lazy"
+                        decoding="async"
                         className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                       />
                     </div>

@@ -31,7 +31,7 @@ export function Footer() {
           </div>
 
           <nav aria-label="Footer">
-            <h2 className="eyebrow text-ivory/60">Navigate</h2>
+            <p className="eyebrow text-ivory/60">Navigate</p>
             <ul className="mt-5 space-y-3">
               {navLinks.map((link) => (
                 <li key={`${link.to}${link.hash ? `#${link.hash}` : ""}`}>
@@ -48,7 +48,7 @@ export function Footer() {
           </nav>
 
           <div>
-            <h2 className="eyebrow text-ivory/60">Contact</h2>
+            <p className="eyebrow text-ivory/60">Contact</p>
             <ul className="mt-5 space-y-3">
               {contactChannels.map((channel) => {
                 const Icon = channelIcons[channel.id as keyof typeof channelIcons] ?? Mail;
@@ -70,7 +70,7 @@ export function Footer() {
               })}
             </ul>
 
-            <h2 className="eyebrow mt-8 text-ivory/60">Social</h2>
+            <p className="eyebrow mt-8 text-ivory/60">Social</p>
             <ul className="mt-4 flex gap-3">
               {socialLinks.map((social) => {
                 const Icon = socialIcons[social.id as keyof typeof socialIcons] ?? Instagram;

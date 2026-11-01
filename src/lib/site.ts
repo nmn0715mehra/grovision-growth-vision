@@ -26,9 +26,8 @@ export function getCanonicalUrl(path = "/"): string {
     return `${SITE_URL}/`;
   }
   const cleanPath = path.startsWith("/") ? path : `/${path}`;
-  const normalized =
-    cleanPath.endsWith("/") && cleanPath.length > 1 ? cleanPath.slice(0, -1) : cleanPath;
-  return `${SITE_URL}${normalized}`;
+  const withTrailingSlash = cleanPath.endsWith("/") ? cleanPath : `${cleanPath}/`;
+  return `${SITE_URL}${withTrailingSlash}`;
 }
 
 export type ContactChannel = {
@@ -200,7 +199,7 @@ export const portfolioItems: PortfolioItem[] = [
     focus:
       "A self-directed exercise in positioning a product-led brand: audience definition, messaging pillars and tone of voice.",
     scope: ["Positioning", "Messaging", "Tone of voice"],
-    image: "/images/portfolio/brand-strategy.jpg",
+    image: "/images/portfolio/brand-strategy.webp",
   },
   {
     id: "social-media-campaign-concept",
@@ -210,7 +209,7 @@ export const portfolioItems: PortfolioItem[] = [
     focus:
       "A campaign idea developed end to end — objective, content pillars, formats and a four-week posting structure.",
     scope: ["Campaign idea", "Content pillars", "Calendar"],
-    image: "/images/portfolio/social-media.jpg",
+    image: "/images/portfolio/social-media.webp",
   },
   {
     id: "seo-strategy-concept",
@@ -220,7 +219,7 @@ export const portfolioItems: PortfolioItem[] = [
     focus:
       "A practice search strategy covering intent mapping, page structure and a content plan for a local service business.",
     scope: ["Intent mapping", "Site structure", "Content plan"],
-    image: "/images/portfolio/seo-strategy.jpg",
+    image: "/images/portfolio/seo-strategy.webp",
   },
   {
     id: "paid-advertising-concept",
@@ -230,7 +229,7 @@ export const portfolioItems: PortfolioItem[] = [
     focus:
       "A hypothetical campaign framework: objectives, audience segments, creative angles and a measurement approach.",
     scope: ["Objectives", "Audience segments", "Creative angles"],
-    image: "/images/portfolio/paid-advertising.jpg",
+    image: "/images/portfolio/paid-advertising.webp",
   },
   {
     id: "digital-growth-strategy-concept",
@@ -240,7 +239,7 @@ export const portfolioItems: PortfolioItem[] = [
     focus:
       "A full-funnel direction exercise connecting awareness, consideration and conversion for an emerging brand.",
     scope: ["Funnel mapping", "Channel priorities", "Measurement"],
-    image: "/images/portfolio/growth-strategy.jpg",
+    image: "/images/portfolio/growth-strategy.webp",
   },
 ];
 

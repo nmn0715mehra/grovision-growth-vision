@@ -4,6 +4,9 @@ import { Reveal } from "../Reveal";
 import { caseStudyFramework } from "@/lib/site";
 
 export function CaseStudiesSection({ heading = "h2" }: { heading?: "h1" | "h2" }) {
+  const subHeadingTag = heading === "h1" ? "h2" : "h3";
+  const SubHeading = subHeadingTag;
+
   return (
     <Section id="case-studies" tone="beige">
       <SectionHeading
@@ -17,7 +20,9 @@ export function CaseStudiesSection({ heading = "h2" }: { heading?: "h1" | "h2" }
         {caseStudyFramework.map((block, index) => (
           <Reveal key={block.title} delay={(index % 3) * 70} className="bg-ivory p-6 sm:p-7">
             <span className="eyebrow text-gold">0{index + 1}</span>
-            <h3 className="mt-4 text-base font-bold text-navy sm:text-lg">{block.title}</h3>
+            <SubHeading className="mt-4 text-base font-bold text-navy sm:text-lg">
+              {block.title}
+            </SubHeading>
             <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{block.body}</p>
           </Reveal>
         ))}
@@ -27,9 +32,12 @@ export function CaseStudiesSection({ heading = "h2" }: { heading?: "h1" | "h2" }
         <div className="group overflow-hidden rounded-xl border border-border bg-white shadow-card transition-all duration-300 hover:border-gold hover:shadow-lift grid lg:grid-cols-[1.1fr_0.9fr] items-stretch">
           <div className="relative min-h-[260px] sm:min-h-[300px] w-full overflow-hidden bg-navy/5">
             <img
-              src="/images/site/growth-funnel-collaboration.jpg"
+              src="/images/site/growth-funnel-collaboration.webp"
               alt="Data-driven marketing funnel analysis and performance strategy"
+              width={1200}
+              height={670}
               loading="lazy"
+              decoding="async"
               className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-navy/50 via-transparent to-transparent opacity-60" />
@@ -41,11 +49,12 @@ export function CaseStudiesSection({ heading = "h2" }: { heading?: "h1" | "h2" }
           <div className="p-6 sm:p-8 flex flex-col justify-between bg-ivory">
             <div>
               <span className="eyebrow text-gold">The Analytical Standard</span>
-              <h3 className="mt-2 text-lg sm:text-xl font-bold text-navy">
+              <SubHeading className="mt-2 text-lg sm:text-xl font-bold text-navy">
                 Data-backed decisions, not guesswork.
-              </h3>
+              </SubHeading>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                Every campaign is tracked across the entire funnel — from organic intent acquisition and blended ROAS to conversion efficiency and customer retention.
+                Every campaign is tracked across the entire funnel — from organic intent acquisition
+                and blended ROAS to conversion efficiency and customer retention.
               </p>
             </div>
             <div className="mt-6 pt-5 border-t border-border/80 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">

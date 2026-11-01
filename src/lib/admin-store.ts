@@ -270,7 +270,7 @@ const initialPages: MonitoredPage[] = [
     title: "Digital Marketing Services & SEO Strategy | GROVISION",
     httpStatus: 200,
     indexStatus: "Indexed",
-    canonicalUrl: "https://grovision.shop/services",
+    canonicalUrl: "https://grovision.shop/services/",
     healthScore: 92,
     primaryKeyword: "creative growth marketing agency",
     wordCount: 980,
@@ -285,7 +285,7 @@ const initialPages: MonitoredPage[] = [
     title: "Portfolio | Creative & Growth Campaigns | GROVISION",
     httpStatus: 200,
     indexStatus: "Indexed",
-    canonicalUrl: "https://grovision.shop/portfolio",
+    canonicalUrl: "https://grovision.shop/portfolio/",
     healthScore: 94,
     primaryKeyword: "b2b performance marketing portfolio",
     wordCount: 820,
@@ -300,7 +300,7 @@ const initialPages: MonitoredPage[] = [
     title: "Case Studies | Digital Marketing Results | GROVISION",
     httpStatus: 200,
     indexStatus: "Indexed",
-    canonicalUrl: "https://grovision.shop/case-studies",
+    canonicalUrl: "https://grovision.shop/case-studies/",
     healthScore: 96,
     primaryKeyword: "roi driven digital marketing case studies",
     wordCount: 1100,
@@ -315,7 +315,7 @@ const initialPages: MonitoredPage[] = [
     title: "About GROVISION | Strategic Digital Marketing Brand",
     httpStatus: 200,
     indexStatus: "Indexed",
-    canonicalUrl: "https://grovision.shop/about",
+    canonicalUrl: "https://grovision.shop/about/",
     healthScore: 91,
     primaryKeyword: "brand identity and digital strategy",
     wordCount: 890,
@@ -330,7 +330,7 @@ const initialPages: MonitoredPage[] = [
     title: "Contact GROVISION | Start Your Growth Consultation",
     httpStatus: 200,
     indexStatus: "Indexed",
-    canonicalUrl: "https://grovision.shop/contact",
+    canonicalUrl: "https://grovision.shop/contact/",
     healthScore: 93,
     primaryKeyword: "contact grovision digital marketing",
     wordCount: 450,
@@ -345,7 +345,7 @@ const initialPages: MonitoredPage[] = [
     title: "The GROVISION Journal | SEO, Brand & Growth Insights",
     httpStatus: 200,
     indexStatus: "Indexed",
-    canonicalUrl: "https://grovision.shop/blog",
+    canonicalUrl: "https://grovision.shop/blog/",
     healthScore: 97,
     primaryKeyword: "growth and seo insights",
     wordCount: 1600,
@@ -686,7 +686,12 @@ export function useAdminStore() {
     // Ensure monitored pages always adhere to updated < 60 title and < 160 description
     return stored.map((p) => {
       const match = initialPages.find((ip) => ip.url === p.url);
-      if (match && (p.metaDescription.length > 160 || p.title.length > 60 || p.metaDescription.includes("creative and strategic digital marketing brand"))) {
+      if (
+        match &&
+        (p.metaDescription.length > 160 ||
+          p.title.length > 60 ||
+          p.metaDescription.includes("creative and strategic digital marketing brand"))
+      ) {
         return {
           ...p,
           title: match.title,

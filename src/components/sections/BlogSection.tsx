@@ -2,7 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { Section, SectionHeading } from "../SectionHeading";
 import { Reveal } from "../Reveal";
 import { useBlogStore } from "@/lib/blog-store";
-import { ArrowRight, Clock, BookOpen } from "lucide-react";
+import { ArrowRight, Clock } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
 export function BlogSection({ heading = "h2" }: { heading?: "h1" | "h2" }) {
@@ -39,6 +39,10 @@ export function BlogSection({ heading = "h2" }: { heading?: "h1" | "h2" }) {
                   <img
                     src={post.coverImage}
                     alt={post.title}
+                    width={1200}
+                    height={630}
+                    loading="lazy"
+                    decoding="async"
                     className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                 </div>

@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
-const horizontalAsset = { url: "/brand/logo-horizontal.png" };
-const stackedNavyAsset = { url: "/brand/logo-stacked-navy.png" };
-const stackedLightAsset = { url: "/brand/logo-stacked-light.png" };
+const horizontalAsset = { url: "/brand/logo-horizontal.webp" };
+const stackedNavyAsset = { url: "/brand/logo-stacked-navy.webp" };
+const stackedLightAsset = { url: "/brand/logo-stacked-light.webp" };
 const iconNavyAsset = { url: "/brand/logo-icon-navy.png" };
 const iconLightAsset = { url: "/brand/logo-icon-light.png" };
 
@@ -21,7 +21,9 @@ export function LogoMark({
   return (
     <img
       src={src}
-      alt=""
+      alt="GROVISION icon mark"
+      width={256}
+      height={256}
       aria-hidden="true"
       loading="lazy"
       decoding="async"

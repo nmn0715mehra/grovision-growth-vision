@@ -47,9 +47,13 @@ function StrategicGrowthCard() {
         {/* Visual Hero Header */}
         <div className="relative h-44 sm:h-52 w-full overflow-hidden border-b border-border/80 bg-navy/5">
           <img
-            src="/images/site/hero-strategic-growth.jpg"
+            src="/images/site/hero-strategic-growth.webp"
             alt="Strategic digital growth and brand positioning"
+            width={1200}
+            height={670}
             loading="eager"
+            fetchPriority="high"
+            decoding="async"
             className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-navy/70 via-navy/20 to-transparent" />
@@ -78,9 +82,9 @@ function StrategicGrowthCard() {
                 </div>
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center justify-between gap-2">
-                    <h3 className="text-xs sm:text-sm font-bold text-navy group-hover:text-gold transition-colors">
+                    <p className="text-xs sm:text-sm font-bold text-navy group-hover:text-gold transition-colors">
                       {item.title}
-                    </h3>
+                    </p>
                     <span className="shrink-0 text-[10px] font-medium text-gold-dark bg-gold/15 px-2 py-0.5 rounded font-mono">
                       {item.badge}
                     </span>

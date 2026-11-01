@@ -24,8 +24,8 @@ export function AboutSection({ heading = "h2" }: { heading?: "h1" | "h2" }) {
             <Reveal delay={80}>
               <p>
                 The long-term goal is for GROVISION to become a serious digital marketing business.
-                That means the standards — thinking, craft and communication — are set now, before the
-                scale arrives.
+                That means the standards — thinking, craft and communication — are set now, before
+                the scale arrives.
               </p>
             </Reveal>
             <Reveal delay={160}>
@@ -42,9 +42,12 @@ export function AboutSection({ heading = "h2" }: { heading?: "h1" | "h2" }) {
           <div className="group relative overflow-hidden rounded-lg border border-border bg-card shadow-card transition-all duration-300 hover:border-gold hover:shadow-lift">
             <div className="relative aspect-[4/3] w-full overflow-hidden bg-navy/5">
               <img
-                src="/images/site/about-strategy-studio.jpg"
+                src="/images/site/about-strategy-studio.webp"
                 alt="GROVISION strategic workspace and brand direction"
+                width={1200}
+                height={670}
                 loading="lazy"
+                decoding="async"
                 className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-navy/60 via-transparent to-transparent opacity-70" />
@@ -59,7 +62,8 @@ export function AboutSection({ heading = "h2" }: { heading?: "h1" | "h2" }) {
             </div>
             <div className="border-t border-border bg-ivory/60 p-4 sm:p-5">
               <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-                Every strategy is engineered on deep audience research, crisp positioning, and authentic business outcomes.
+                Every strategy is engineered on deep audience research, crisp positioning, and
+                authentic business outcomes.
               </p>
             </div>
           </div>

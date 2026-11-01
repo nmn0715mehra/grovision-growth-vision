@@ -44,7 +44,7 @@ export const Route = createFileRoute("/blog/$slug")({
         { property: "og:type", content: "article" },
         {
           property: "og:url",
-          content: blog?.seo.canonicalUrl || getCanonicalUrl(`/blog/${params.slug}`),
+          content: getCanonicalUrl(`/blog/${params.slug}/`),
         },
         {
           name: "robots",
@@ -54,7 +54,7 @@ export const Route = createFileRoute("/blog/$slug")({
       links: [
         {
           rel: "canonical",
-          href: blog?.seo.canonicalUrl || getCanonicalUrl(`/blog/${params.slug}`),
+          href: getCanonicalUrl(`/blog/${params.slug}/`),
         },
       ],
     };
@@ -197,6 +197,10 @@ export function BlogPostDetailPage() {
             <img
               src={blog.coverImage}
               alt={blog.title}
+              width={1200}
+              height={630}
+              loading="eager"
+              decoding="async"
               className="w-full h-72 sm:h-96 object-cover"
             />
           </div>

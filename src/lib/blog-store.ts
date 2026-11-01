@@ -176,7 +176,7 @@ const initialBlogs: BlogPost[] = [
         "Learn why intent beats search volume in modern SEO. A battle-tested blueprint for emerging brands in India to capture high-converting search demand.",
       targetKeywords: ["seo playbook india", "intent based seo", "organic growth strategy"],
       canonicalUrl:
-        "https://grovision.shop/blog/modern-seo-playbook-indian-brands-intent-over-volume",
+        "https://grovision.shop/blog/modern-seo-playbook-indian-brands-intent-over-volume/",
       gscStatus: "Indexed",
       lastCrawledAt: "2026-10-22",
       searchConsoleUrl:
@@ -271,7 +271,7 @@ Explore our consultation below to map out your custom 6-month growth roadmap.`,
       metaDescription:
         "Discover why brand positioning is the single highest leverage lever for lowering customer acquisition costs (CAC) across paid channels.",
       targetKeywords: ["brand positioning", "paid ad performance", "cac reduction strategy"],
-      canonicalUrl: "https://grovision.shop/blog/why-brand-positioning-must-precede-paid-ad-spend",
+      canonicalUrl: "https://grovision.shop/blog/why-brand-positioning-must-precede-paid-ad-spend/",
       gscStatus: "Indexed",
       lastCrawledAt: "2026-10-21",
       searchConsoleUrl:
@@ -345,7 +345,7 @@ Once this foundation is dialed in, your ad copy writes itself, your click-throug
         "roas measurement",
       ],
       canonicalUrl:
-        "https://grovision.shop/blog/attribution-modeling-2026-first-click-last-click-illusions",
+        "https://grovision.shop/blog/attribution-modeling-2026-first-click-last-click-illusions/",
       gscStatus: "Indexed",
       lastCrawledAt: "2026-10-20",
       searchConsoleUrl:
@@ -416,7 +416,7 @@ When you calibrate budgets against blended MER alongside post-purchase zero-part
         "product page seo checklist",
         "collection page ranking",
       ],
-      canonicalUrl: "https://grovision.shop/blog/on-page-seo-checklist-emerging-ecommerce-stores",
+      canonicalUrl: "https://grovision.shop/blog/on-page-seo-checklist-emerging-ecommerce-stores/",
       gscStatus: "Not Submitted",
       searchConsoleUrl:
         "https://search.google.com/search-console?resource_id=sc-domain:grovision.shop",
@@ -538,7 +538,7 @@ export function useBlogStore() {
           data.excerpt ||
           "Read actionable insights from GROVISION, helping ambitious brands grow online.",
         targetKeywords: data.seo?.targetKeywords || ["growth marketing", "digital strategy"],
-        canonicalUrl: `https://grovision.shop/blog/${slug}`,
+        canonicalUrl: `https://grovision.shop/blog/${slug}/`,
         gscStatus: data.status === "published" ? "Submitted" : "Not Submitted",
         searchConsoleUrl: `https://search.google.com/search-console?resource_id=sc-domain:grovision.shop`,
       },

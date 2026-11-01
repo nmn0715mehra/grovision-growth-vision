@@ -221,7 +221,7 @@ export function BlogAdminPage() {
           metaTitle: metaTitle || `${title} | GROVISION`,
           metaDescription: metaDescription || excerpt || title,
           targetKeywords: keywords,
-          canonicalUrl: `https://grovision.shop/blog/${slug}`,
+          canonicalUrl: `https://grovision.shop/blog/${slug}/`,
           gscStatus: "Not Submitted",
           searchConsoleUrl:
             "https://search.google.com/search-console?resource_id=sc-domain:grovision.shop",
@@ -243,7 +243,7 @@ export function BlogAdminPage() {
           metaTitle: metaTitle || `${title} | GROVISION`,
           metaDescription: metaDescription || excerpt || title,
           targetKeywords: keywords,
-          canonicalUrl: `https://grovision.shop/blog/${slug}`,
+          canonicalUrl: `https://grovision.shop/blog/${slug}/`,
           gscStatus: "Not Submitted",
           searchConsoleUrl:
             "https://search.google.com/search-console?resource_id=sc-domain:grovision.shop",

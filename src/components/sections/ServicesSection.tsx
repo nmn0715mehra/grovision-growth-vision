@@ -4,6 +4,9 @@ import { Reveal } from "../Reveal";
 import { services } from "@/lib/site";
 
 export function ServicesSection({ heading = "h2" }: { heading?: "h1" | "h2" }) {
+  const subHeadingTag = heading === "h1" ? "h2" : "h3";
+  const SubHeading = subHeadingTag;
+
   return (
     <Section id="services" tone="beige" className="border-t border-border/70">
       <SectionHeading
@@ -17,9 +20,12 @@ export function ServicesSection({ heading = "h2" }: { heading?: "h1" | "h2" }) {
         <div className="group overflow-hidden rounded-xl border border-border bg-white shadow-card transition-all duration-300 hover:border-gold hover:shadow-lift grid lg:grid-cols-[1.15fr_0.85fr] items-stretch">
           <div className="relative min-h-[220px] sm:min-h-[260px] w-full overflow-hidden bg-navy/5">
             <img
-              src="/images/site/services-digital-execution.jpg"
+              src="/images/site/services-digital-execution.webp"
               alt="Strategic digital marketing execution across brand positioning, SEO, and paid performance"
+              width={1200}
+              height={670}
               loading="lazy"
+              decoding="async"
               className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-navy/60 via-transparent to-transparent opacity-60" />
@@ -30,15 +36,18 @@ export function ServicesSection({ heading = "h2" }: { heading?: "h1" | "h2" }) {
           <div className="p-6 sm:p-7 flex flex-col justify-between bg-ivory">
             <div>
               <span className="eyebrow text-gold text-[10px]">Connected disciplines</span>
-              <h3 className="mt-2 text-base sm:text-lg font-bold text-navy">
+              <SubHeading className="mt-2 text-base sm:text-lg font-bold text-navy">
                 Strategy that compounds across every touchpoint.
-              </h3>
+              </SubHeading>
               <p className="mt-2.5 text-xs sm:text-sm leading-relaxed text-muted-foreground">
-                We don’t treat SEO, paid media, or brand messaging as isolated silos. Every channel feeds customer insights, commercial intent, and conversion velocity into the next.
+                We don’t treat SEO, paid media, or brand messaging as isolated silos. Every channel
+                feeds customer insights, commercial intent, and conversion velocity into the next.
               </p>
             </div>
             <div className="mt-5 pt-4 border-t border-border flex items-center justify-between text-xs text-navy font-semibold">
-              <span className="text-[11px] text-muted-foreground font-mono">Full-Stack Execution</span>
+              <span className="text-[11px] text-muted-foreground font-mono">
+                Full-Stack Execution
+              </span>
               <span className="text-gold">Engineered for Scale</span>
             </div>
           </div>
@@ -49,6 +58,7 @@ export function ServicesSection({ heading = "h2" }: { heading?: "h1" | "h2" }) {
         {services.map((service, index) => (
           <Reveal key={service.id} delay={(index % 3) * 80} className="h-full">
             <ServiceCard
+              headingTag={subHeadingTag}
               icon={service.icon}
               name={service.name}
               summary={service.summary}
