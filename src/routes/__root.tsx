@@ -187,9 +187,9 @@ function RootShell({ children }: { children: ReactNode }) {
 
               if (typeof window !== 'undefined') {
                 if ('requestIdleCallback' in window) {
-                  requestIdleCallback(function(){ setTimeout(__loadThirdPartyAnalytics, 2000); });
+                  requestIdleCallback(function(){ setTimeout(__loadThirdPartyAnalytics, 3500); });
                 } else {
-                  setTimeout(__loadThirdPartyAnalytics, 2500);
+                  setTimeout(__loadThirdPartyAnalytics, 3500);
                 }
                 ['scroll', 'touchstart', 'click', 'keydown'].forEach(function(ev){
                   window.addEventListener(ev, __loadThirdPartyAnalytics, { once: true, passive: true });

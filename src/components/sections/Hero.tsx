@@ -46,16 +46,32 @@ function StrategicGrowthCard() {
       <div className="relative overflow-hidden rounded-xl border border-border/80 bg-white shadow-card transition-all duration-300 hover:border-gold/50 hover:shadow-lift">
         {/* Visual Hero Header */}
         <div className="relative h-36 sm:h-40 w-full overflow-hidden border-b border-border/80 bg-navy/5">
-          <img
-            src="/images/site/hero-strategic-growth.webp"
-            alt="Strategic digital growth and brand positioning"
-            width={1200}
-            height={670}
-            loading="eager"
-            fetchPriority="high"
-            decoding="async"
-            className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
-          />
+          <picture>
+            <source
+              media="(max-width: 640px)"
+              srcSet="/images/site/hero-strategic-growth-mobile.webp"
+              type="image/webp"
+              width={640}
+              height={357}
+            />
+            <source
+              media="(min-width: 641px)"
+              srcSet="/images/site/hero-strategic-growth.webp"
+              type="image/webp"
+              width={1200}
+              height={670}
+            />
+            <img
+              src="/images/site/hero-strategic-growth.webp"
+              alt="Strategic digital growth and brand positioning"
+              width={1200}
+              height={670}
+              loading="eager"
+              fetchPriority="high"
+              decoding="async"
+              className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
+            />
+          </picture>
           <div className="absolute inset-0 bg-gradient-to-t from-navy/70 via-navy/20 to-transparent" />
           <div className="absolute bottom-3 left-4 right-4 flex items-center justify-between text-white">
             <span className="inline-flex items-center gap-1.5 rounded bg-navy/85 px-2.5 py-1 text-[11px] font-semibold tracking-wider text-ivory border border-white/10 backdrop-blur-md">

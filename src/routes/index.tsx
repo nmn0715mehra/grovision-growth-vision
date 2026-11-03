@@ -33,8 +33,16 @@ export const Route = createFileRoute("/")({
       {
         rel: "preload",
         as: "image",
+        href: "/images/site/hero-strategic-growth-mobile.webp",
+        type: "image/webp",
+        media: "(max-width: 640px)",
+      },
+      {
+        rel: "preload",
+        as: "image",
         href: "/images/site/hero-strategic-growth.webp",
         type: "image/webp",
+        media: "(min-width: 641px)",
       },
     ],
     scripts: [
