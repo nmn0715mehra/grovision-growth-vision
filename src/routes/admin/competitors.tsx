@@ -169,7 +169,7 @@ function CompetitorsPage() {
                   <a
                     href={`https://${comp.domain}`}
                     target="_blank"
-                    rel="noreferrer"
+                    rel="nofollow noreferrer noopener"
                     className="inline-flex items-center gap-1 font-mono text-xs text-gold hover:underline"
                   >
                     {comp.domain} <ExternalLink className="h-3 w-3" />

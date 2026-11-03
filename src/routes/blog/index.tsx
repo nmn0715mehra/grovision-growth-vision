@@ -240,6 +240,60 @@ export function BlogIndexPage() {
           )}
         </section>
 
+        {/* Editorial Standards & Core Principles */}
+        <div className="mt-16 border-t border-border pt-12">
+          <div className="max-w-3xl">
+            <span className="eyebrow text-gold font-bold uppercase tracking-widest text-xs">
+              Editorial Principles
+            </span>
+            <h2 className="mt-2 font-display text-2xl sm:text-3xl font-bold tracking-tight text-navy">
+              Why We Write: Intent Over Volume.
+            </h2>
+            <p className="mt-3 text-sm text-navy/75 leading-relaxed font-sans">
+              The internet is flooded with commodity marketing content that offers superficial
+              advice without operational substance. At GROVISION, our insights are shaped by real
+              commercial campaigns, technical SEO audits, and sustainable unit economics.
+            </p>
+          </div>
+
+          <div className="mt-8 grid gap-6 sm:grid-cols-3">
+            <div className="rounded-xl border border-border bg-white p-5 shadow-sm">
+              <h3 className="font-display text-sm font-bold text-navy">Commercial Depth</h3>
+              <p className="mt-2 text-xs leading-relaxed text-muted-foreground font-sans">
+                We focus on high-intent search queries and realistic buyer journeys rather than
+                chasing vanity traffic volume that never generates qualified pipeline.
+              </p>
+            </div>
+            <div className="rounded-xl border border-border bg-white p-5 shadow-sm">
+              <h3 className="font-display text-sm font-bold text-navy">Blended Unit Economics</h3>
+              <p className="mt-2 text-xs leading-relaxed text-muted-foreground font-sans">
+                Our perspectives emphasize blended Marketing Efficiency Ratio (MER) and customer
+                lifetime value, rather than relying on inflated single-platform ROAS numbers.
+              </p>
+            </div>
+            <div className="rounded-xl border border-border bg-white p-5 shadow-sm">
+              <h3 className="font-display text-sm font-bold text-navy">Execution Frameworks</h3>
+              <p className="mt-2 text-xs leading-relaxed text-muted-foreground font-sans">
+                Every analysis breaks down the strategic diagnosis, architecture, and step-by-step
+                execution roadmap so marketing leaders can implement changes immediately.
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-6 rounded-xl border border-border bg-white p-6 shadow-sm">
+            <h3 className="font-display text-sm font-bold text-navy">
+              Editorial Review & Quality Standard
+            </h3>
+            <p className="mt-2 text-xs leading-relaxed text-muted-foreground font-sans">
+              Every playbook and guide published on The GROVISION Journal undergoes technical review
+              for accuracy, data integrity, and compliance with search engine guidelines. We
+              research organic demand across five core domains: Search Intent Architecture, Blended
+              Acquisition Economics, Brand Differentiation, Fast Technical Delivery, and Full-Funnel
+              Conversion Optimization.
+            </p>
+          </div>
+        </div>
+
         {/* Growth Consultation Banner */}
         <div className="mt-16 rounded-2xl border border-navy bg-navy p-8 sm:p-12 text-ivory text-center relative overflow-hidden">
           <div className="relative z-10 max-w-2xl mx-auto">

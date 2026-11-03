@@ -88,6 +88,57 @@ export function CaseStudiesSection({ heading = "h2" }: { heading?: "h1" | "h2" }
           </Link>
         </div>
       </Reveal>
+
+      {/* Measurement Standards & Framework */}
+      <div className="mt-14 border-t border-border pt-12">
+        <Reveal>
+          <div className="max-w-3xl">
+            <span className="eyebrow text-gold font-bold uppercase tracking-widest text-xs">
+              Measurement Standards
+            </span>
+            <SubHeading className="mt-2 text-xl sm:text-2xl font-bold text-navy">
+              Our Growth Diagnostic & Analysis Framework
+            </SubHeading>
+            <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+              Real marketing performance cannot be evaluated through isolated platform dashboards.
+              We measure every engagement through blended unit economics and verified customer
+              journeys.
+            </p>
+          </div>
+        </Reveal>
+
+        <div className="mt-8 grid gap-6 sm:grid-cols-3">
+          <Reveal delay={60} className="border border-border bg-ivory p-6">
+            <h3 className="text-sm font-bold uppercase tracking-wider text-navy">
+              Baseline Attribution Audit
+            </h3>
+            <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
+              We audit multi-touch acquisition data to separate true incremental revenue from
+              organic brand traffic that would have converted regardless.
+            </p>
+          </Reveal>
+
+          <Reveal delay={120} className="border border-border bg-ivory p-6">
+            <h3 className="text-sm font-bold uppercase tracking-wider text-navy">
+              Friction Discovery
+            </h3>
+            <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
+              We diagnose user drop-off points between initial ad impression, value proposition
+              comprehension, and final form submission.
+            </p>
+          </Reveal>
+
+          <Reveal delay={180} className="border border-border bg-ivory p-6">
+            <h3 className="text-sm font-bold uppercase tracking-wider text-navy">
+              Intent Demand Mapping
+            </h3>
+            <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
+              We structure content clusters and campaign targeting around commercial-stage search
+              queries with proven purchasing intent.
+            </p>
+          </Reveal>
+        </div>
+      </div>
     </Section>
   );
 }

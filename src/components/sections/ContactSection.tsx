@@ -93,11 +93,14 @@ export function ContactSection({
                 {contactChannels.map((channel) => {
                   const Icon = channelIcons[channel.id as keyof typeof channelIcons] ?? Mail;
                   const active = Boolean(channel.value && channel.href);
+                  const isExternal = Boolean(channel.href && channel.href.startsWith("http"));
                   return (
                     <li key={channel.id} className="bg-ivory">
                       {active ? (
                         <a
                           href={channel.href}
+                          target={isExternal ? "_blank" : undefined}
+                          rel={isExternal ? "nofollow noopener noreferrer" : undefined}
                           className="flex items-center gap-4 p-4 text-sm text-navy transition-colors hover:text-gold"
                         >
                           <Icon aria-hidden="true" className="h-4 w-4 shrink-0 text-gold" />
@@ -140,7 +143,7 @@ export function ContactSection({
                         <a
                           href={social.url}
                           target="_blank"
-                          rel="noreferrer noopener"
+                          rel="nofollow noreferrer noopener"
                           aria-label={`GROVISION on ${social.label}`}
                           className="inline-flex h-11 w-11 items-center justify-center border border-navy/20 text-navy transition-colors hover:border-gold hover:text-gold"
                         >

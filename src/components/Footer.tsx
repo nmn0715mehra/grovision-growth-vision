@@ -56,7 +56,16 @@ export function Footer() {
                   <li key={channel.id} className="flex items-start gap-3 text-sm text-ivory/80">
                     <Icon aria-hidden="true" className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
                     {channel.value ? (
-                      <a href={channel.href ?? "#"} className="transition-colors hover:text-gold">
+                      <a
+                        href={channel.href ?? "#"}
+                        target={channel.href?.startsWith("http") ? "_blank" : undefined}
+                        rel={
+                          channel.href?.startsWith("http")
+                            ? "nofollow noopener noreferrer"
+                            : undefined
+                        }
+                        className="transition-colors hover:text-gold"
+                      >
                         {channel.value}
                       </a>
                     ) : (
@@ -80,7 +89,7 @@ export function Footer() {
                       <a
                         href={social.url}
                         target="_blank"
-                        rel="noreferrer noopener"
+                        rel="nofollow noreferrer noopener"
                         aria-label={`GROVISION on ${social.label}`}
                         className="inline-flex h-10 w-10 items-center justify-center border border-ivory/25 text-ivory transition-colors hover:border-gold hover:text-gold"
                       >

@@ -246,7 +246,7 @@ function BacklinksPage() {
                       <a
                         href={bl.sourceUrl}
                         target="_blank"
-                        rel="noreferrer"
+                        rel="nofollow noreferrer noopener"
                         className="inline-flex items-center gap-1 text-xs text-gold hover:text-navy"
                       >
                         Source <ExternalLink className="h-3 w-3" />

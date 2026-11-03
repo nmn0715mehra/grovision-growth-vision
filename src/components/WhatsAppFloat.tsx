@@ -36,7 +36,7 @@ export function WhatsAppFloat() {
       <a
         href={whatsappHref}
         target="_blank"
-        rel="noopener noreferrer"
+        rel="nofollow noopener noreferrer"
         aria-label="Chat with GROVISION on WhatsApp"
         className="flex h-14 w-14 items-center justify-center rounded-full bg-whatsapp text-ivory shadow-lift transition-all duration-300 hover:-translate-y-0.5 hover:bg-whatsapp-deep sm:h-[60px] sm:w-[60px]"
       >

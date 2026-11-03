@@ -403,7 +403,7 @@ When you calibrate budgets against blended MER alongside post-purchase zero-part
     coverImage:
       "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=1200&h=630&q=80",
     readTime: "8 min read",
-    status: "draft",
+    status: "published",
     featured: false,
     publishDate: "2026-10-23",
     updatedAt: "2026-10-23",
@@ -417,7 +417,7 @@ When you calibrate budgets against blended MER alongside post-purchase zero-part
         "collection page ranking",
       ],
       canonicalUrl: "https://grovision.shop/blog/on-page-seo-checklist-emerging-ecommerce-stores/",
-      gscStatus: "Not Submitted",
+      gscStatus: "Submitted",
       searchConsoleUrl:
         "https://search.google.com/search-console?resource_id=sc-domain:grovision.shop",
     },
