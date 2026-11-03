@@ -28,7 +28,15 @@ export const Route = createFileRoute("/")({
       { property: "og:url", content: getCanonicalUrl("/") },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: getCanonicalUrl("/") }],
+    links: [
+      { rel: "canonical", href: getCanonicalUrl("/") },
+      {
+        rel: "preload",
+        as: "image",
+        href: "/images/site/hero-strategic-growth.webp",
+        type: "image/webp",
+      },
+    ],
     scripts: [
       {
         type: "application/ld+json",
