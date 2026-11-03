@@ -68,7 +68,6 @@ function StrategicGrowthCard() {
               height={670}
               loading="eager"
               fetchPriority="high"
-              decoding="async"
               className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
             />
           </picture>

@@ -12,6 +12,7 @@ import {
 import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
+import { criticalCss } from "../lib/critical-css";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
@@ -112,7 +113,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     ],
     links: [
       {
-        rel: "stylesheet",
+        rel: "preload",
+        as: "style",
         href: appCss,
       },
       { rel: "dns-prefetch", href: "https://fonts.googleapis.com" },
@@ -120,7 +122,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
-        rel: "stylesheet",
+        rel: "preload",
+        as: "style",
         href: "https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap",
       },
       { rel: "icon", href: "/favicon.png", type: "image/png" },
@@ -137,6 +140,36 @@ function RootShell({ children }: { children: ReactNode }) {
     <html lang="en">
       <head>
         <HeadContent />
+        {/* Critical Above-The-Fold CSS inlined for sub-1s FCP and LCP */}
+        <style dangerouslySetInnerHTML={{ __html: criticalCss }} />
+        {/* Asynchronous Main Stylesheet */}
+        <link rel="stylesheet" href={appCss} media="print" id="grovision-main-css" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `!function(){var l=document.getElementById("grovision-main-css");if(l){if(l.sheet){l.media="all"}else{l.addEventListener("load",function(){l.media="all"})}}}();`,
+          }}
+        />
+        <noscript>
+          <link rel="stylesheet" href={appCss} />
+        </noscript>
+        {/* Asynchronous Google Fonts Montserrat */}
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+          media="print"
+          id="grovision-fonts-css"
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `!function(){var f=document.getElementById("grovision-fonts-css");if(f){if(f.sheet){f.media="all"}else{f.addEventListener("load",function(){f.media="all"})}}}();`,
+          }}
+        />
+        <noscript>
+          <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+          />
+        </noscript>
         {/* Third-party analytics initialized on idle/interaction without blocking initial paint or TBT */}
         <script
           dangerouslySetInnerHTML={{
@@ -187,9 +220,9 @@ function RootShell({ children }: { children: ReactNode }) {
 
               if (typeof window !== 'undefined') {
                 if ('requestIdleCallback' in window) {
-                  requestIdleCallback(function(){ setTimeout(__loadThirdPartyAnalytics, 3500); });
+                  requestIdleCallback(function(){ setTimeout(__loadThirdPartyAnalytics, 5000); });
                 } else {
-                  setTimeout(__loadThirdPartyAnalytics, 3500);
+                  setTimeout(__loadThirdPartyAnalytics, 5000);
                 }
                 ['scroll', 'touchstart', 'click', 'keydown'].forEach(function(ev){
                   window.addEventListener(ev, __loadThirdPartyAnalytics, { once: true, passive: true });

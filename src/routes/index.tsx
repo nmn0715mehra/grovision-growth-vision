@@ -36,6 +36,8 @@ export const Route = createFileRoute("/")({
         href: "/images/site/hero-strategic-growth-mobile.webp",
         type: "image/webp",
         media: "(max-width: 640px)",
+        // @ts-expect-error - HTML link fetchPriority attribute
+        fetchPriority: "high",
       },
       {
         rel: "preload",
@@ -43,6 +45,8 @@ export const Route = createFileRoute("/")({
         href: "/images/site/hero-strategic-growth.webp",
         type: "image/webp",
         media: "(min-width: 641px)",
+        // @ts-expect-error - HTML link fetchPriority attribute
+        fetchPriority: "high",
       },
     ],
     scripts: [
